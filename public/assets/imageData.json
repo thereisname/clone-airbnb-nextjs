@@ -1,0 +1,9 @@
+{
+  "mainImage": "src/assets/image/mainImage.png",
+  "subImages": [
+    "src/assets/image/subImage_1.png",
+    "src/assets/image/subImage_2.png",
+    "src/assets/image/subImage_3.png",
+    "src/assets/image/subImage_4.png"
+  ]
+}

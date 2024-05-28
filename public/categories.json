@@ -1,0 +1,117 @@
+{
+    "desc" : [
+        { 
+            "img" :"/assets/categories-icons/House.svg" ,
+            "imgname" : "집"
+        },
+        { 
+            "img" :"/assets/categories-icons/Pool.svg" ,
+            "imgname" : "멋진 수영장"
+        },
+        { 
+            "img" :"/assets/categories-icons/Barn.svg" ,
+            "imgname" : "한적한 시골"
+        },
+        { 
+            "img" :"/assets/categories-icons/Bed & breakfast.svg" ,
+            "imgname" : "여유로운"
+        },
+        { 
+            "img" :"/assets/categories-icons/Yurt.svg" ,
+            "imgname" : "유르트"
+        },
+        { 
+            "img" :"/assets/categories-icons/Farm.svg" ,
+            "imgname" : "농장"
+        },
+        { 
+            "img" :"/assets/categories-icons/Beach area.svg" ,
+            "imgname" : "해변 바로 앞"
+        },
+        { 
+            "img" :"/assets/categories-icons/Minsu.svg" ,
+            "imgname" : "한옥"
+        },
+        { 
+            "img" :"/assets/categories-icons/Casa particular.svg" ,
+            "imgname" : "기상천외한 숙소"
+        },
+        { 
+            "img" :"/assets/categories-icons/Houseboat.svg" ,
+            "imgname" : "보트 하우스"
+        },
+        { 
+            "img" :"/assets/categories-icons/Cave.svg" ,
+            "imgname" : "동굴"
+        },
+        { 
+            "img" :"/assets/categories-icons/Castle.svg" ,
+            "imgname" : "캐슬"
+        },
+        { 
+            "img" :"/assets/categories-icons/Cabin.svg" ,
+            "imgname" : "통나무집"
+        },
+        { 
+            "img" :"/assets/categories-icons/Apartment.svg" ,
+            "imgname" : "아파트"
+        },
+        { 
+            "img" :"/assets/categories-icons/Container.svg" ,
+            "imgname" : "컨테이너"
+        },
+        { 
+            "img" :"/assets/categories-icons/Outdoor dining.svg" ,
+            "imgname" : "아웃도어"
+        },
+        { 
+            "img" :"/assets/categories-icons/Tent.svg" ,
+            "imgname" : "캠핑장"
+        },
+        { 
+            "img" :"/assets/categories-icons/Tiny home.svg" ,
+            "imgname" : "초소형 주택"
+        },
+        { 
+            "img" :"/assets/categories-icons/Ryokan.svg" ,
+            "imgname" : "료칸"
+        },
+        { 
+            "img" :"/assets/categories-icons/Parking.svg" ,
+            "imgname" : "주차 가능"
+        },
+        { 
+            "img" :"/assets/categories-icons/Tree house.svg" ,
+            "imgname" : "트리하우스"
+        },
+        { 
+            "img" :"/assets/categories-icons/Kezhan.svg" ,
+            "imgname" : "케잔"
+        },
+        { 
+            "img" :"/assets/categories-icons/BBQ grill.svg" ,
+            "imgname" : "바베큐"
+        },
+        { 
+            "img" :"/assets/categories-icons/Lake area.svg" ,
+            "imgname" : "호숫가"
+        },
+        { 
+            "img" :"/assets/categories-icons/Hot tub.svg" ,
+            "imgname" : "사우나"
+        },
+        { 
+            "img" :"/assets/categories-icons/First aid kit.svg" ,
+            "imgname" : "병원 근처"
+        },
+        { 
+            "img" :"/assets/categories-icons/Gym.svg" ,
+            "imgname" : "운동 가능"
+        },
+        { 
+            "img" :"/assets/categories-icons/Air conditioning.svg" ,
+            "imgname" : "북극"
+        }
+
+    ]
+}

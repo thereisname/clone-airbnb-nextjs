@@ -1,7 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 
-const Categories = ({ padding }) => {
+const Categories = ({ padding = 'default-padding' }) => {
   const [categories, setCategories] = useState([])
   const sliderRef = useRef(null)
 

@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import HeaderContentModal from '@/app/components/HeaderContentModal' // 적절한 경로로 수정하세요
 import LoginModal from '@/app/components/LoginModal' // 새로운 LoginModal 컴포넌트의 경로를 수정하세요
-import Search from './Search'
 
 const HeaderContent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -23,7 +22,7 @@ const HeaderContent = () => {
   }
 
   return (
-    <>
+    <div className='flex justify-between items-center w-full'>
       <div>
         <img src='/assets/airbnbLogo.svg' alt='에어비앤비 로고입니다.' />
       </div>
@@ -63,7 +62,7 @@ const HeaderContent = () => {
       </div>
 
       <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose} />
-    </>
+    </div>
   )
 }
 

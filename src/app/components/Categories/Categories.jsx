@@ -7,7 +7,7 @@ const Categories = () => {
 
   useEffect(() => {
     // JSON 데이터 fetch
-    fetch('../../categories.json')
+    fetch('/categories.json')
       .then((response) => response.json())
       .then((data) => setCategories(data.desc))
       .catch((error) => console.error('Error fetching data:', error))

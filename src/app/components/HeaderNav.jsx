@@ -9,7 +9,7 @@ const HeaderNav = () => {
         <HeaderContent />
         <Search />
       </div>
-      <Categories />
+      <Categories padding={'main-padding-list'} />
     </header>
   )
 }

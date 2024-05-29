@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import HeaderContentModal from '@/app/components/HeaderComtentModal' // 적절한 경로로 수정하세요
+import HeaderContentModal from '@/app/components/HeaderContentModal' // 적절한 경로로 수정하세요
 import LoginModal from '@/app/components/LoginModal' // 새로운 LoginModal 컴포넌트의 경로를 수정하세요
 import Search from './Search'
 
@@ -10,7 +10,7 @@ const HeaderContent = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
 
   const handleModalToggle = () => {
-    setIsModalOpen(prev => !prev)
+    setIsModalOpen((prev) => !prev)
   }
 
   const handleLoginClick = () => {
@@ -49,10 +49,7 @@ const HeaderContent = () => {
           >
             <ul className='text-sm text-gray-800'>
               <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer'>회원 가입</li>
-              <li
-                className='px-4 py-3 hover:bg-gray-100 cursor-pointer'
-                onClick={handleLoginClick}
-              >
+              <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer' onClick={handleLoginClick}>
                 로그인
               </li>
               <hr className='my-2' />
@@ -63,13 +60,9 @@ const HeaderContent = () => {
             </ul>
           </HeaderContentModal>
         </div>
-        {/* <Search /> */}
       </div>
 
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onClose={handleLoginModalClose}
-      />
+      <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose} />
     </>
   )
 }

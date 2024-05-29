@@ -1,6 +1,6 @@
 const Search = () => {
   return (
-    <div className='absolute w-full top-16 lg:top-3'>
+    <div className='absolute w-full top-16 lg:top-[2rem]'>
       <nav className='absolute left-1/2 transform -translate-x-1/2'>
         <ul className='flex justify-center gap-4'>
           <li>숙소</li>
@@ -22,7 +22,7 @@ const Search = () => {
 
         <div className='h-2/5 border border-solid border-gray-200'></div>
 
-        <div className='flex items-center w-32 px-6'>
+        <div className='flex items-center w-32 px-6 h-full rounded-full hover:bg-gray-200'>
           <label className='flex flex-col'>
             <span className='text-neutral-800 text-xs'>체크인</span>
             <div className='text-neutral-500 text-sm'>날짜 추가</div>
@@ -31,7 +31,7 @@ const Search = () => {
 
         <div className='h-2/5 border border-solid border-gray-200'></div>
 
-        <div className='flex items-center w-32 px-6'>
+        <div className='flex items-center w-32 px-6 h-full rounded-full hover:bg-gray-200'>
           <label className='flex flex-col'>
             <span className='text-neutral-800 text-xs'>체크아웃</span>
             <div className='text-neutral-500 text-sm'>날짜 추가</div>
@@ -40,7 +40,7 @@ const Search = () => {
 
         <div className='h-2/5 border border-solid border-gray-200'></div>
 
-        <div className='flex items-center w-52 px-6 rounded-r-full'>
+        <div className='flex items-center w-52 px-6 rounded-r-full rounded-full h-full hover:bg-gray-200'>
           <label className='flex flex-col'>
             <span className='text-neutral-800 text-xs'>여행자</span>
             <div className='text-neutral-500 text-sm'>게스트 추가</div>

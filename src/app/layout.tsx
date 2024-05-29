@@ -10,13 +10,13 @@ const RootLayout = ({ children }) => {
     <html lang='en'>
       <body>
         <div className='flex flex-col bg-white h-60'>
-          <header className={`fixed py-5 bg-white w-full main-padding-list`}>
-            <div className='flex items-center justify-between relative'>
+          <header className={`fixed bg-white w-full main-padding-list`}>
+            <div className='flex py-5 items-center justify-between relative'>
               <HeaderContent />
+              <Search />
+              {/* <Categories padding={'main-padding-list'} /> */}
             </div>
           </header>
-          <Search />
-          <Categories padding={'main-padding-list'} />
         </div>
         <main className='my-5 w-full flex justify-center main-padding-list'>{children}</main>
         <FooterComponent />

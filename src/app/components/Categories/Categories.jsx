@@ -1,7 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 
-const Categories = ({ padding }) => {
+const Categories = () => {
   const [categories, setCategories] = useState([])
   const sliderRef = useRef(null)
 
@@ -28,7 +28,7 @@ const Categories = ({ padding }) => {
   }
 
   return (
-    <div className={`relative top-40 lg:top-32 ${padding}`}>
+    <div className={`relative top-24 lg:top-20 main-padding-list`}>
       <button
         onClick={scrollLeft}
         className='absolute left-0 top-1/2 transform -translate-y-1/2 p-2'

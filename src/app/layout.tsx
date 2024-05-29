@@ -14,7 +14,9 @@ const RootLayout = ({ children }) => {
             <div className='flex py-5 items-center justify-between relative'>
               <HeaderContent />
               <Search />
-              {/* <Categories padding={'main-padding-list'} /> */}
+            </div>
+            <div className='bg-white h-44'>
+              <Categories />
             </div>
           </header>
         </div>

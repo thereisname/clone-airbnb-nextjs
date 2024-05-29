@@ -1,12 +1,25 @@
 'use client'
 
 import { useState } from 'react'
+import HeaderContentModal from '@/app/components/HeaderComtentModal' // 적절한 경로로 수정하세요
+import LoginModal from '@/app/components/LoginModal' // 새로운 LoginModal 컴포넌트의 경로를 수정하세요
+import Search from './Search'
 
 const HeaderContent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
 
   const handleModalToggle = () => {
-    setIsModalOpen(!isModalOpen)
+    setIsModalOpen(prev => !prev)
+  }
+
+  const handleLoginClick = () => {
+    setIsModalOpen(false)
+    setIsLoginModalOpen(true)
+  }
+
+  const handleLoginModalClose = () => {
+    setIsLoginModalOpen(false)
   }
 
   return (
@@ -15,8 +28,7 @@ const HeaderContent = () => {
         <img src='/assets/airbnbLogo.svg' alt='에어비앤비 로고입니다.' />
       </div>
 
-      {/* 나머지 기타 부분 (당신의 공간을 ~, 로그인 버튼 등) */}
-      <div className='flex justify-end items-center gap-6'>
+      <div className='flex justify-end items-center gap-6 relative'>
         <div className='text-neutral-800 text-sm'>당신의 공간을 에어비앤비하세요</div>
         <button className='relative'>
           <img src='/assets/language.svg' alt='언어 선택' />
@@ -30,24 +42,36 @@ const HeaderContent = () => {
             <img src='/assets/account.svg' alt='계정' />
           </button>
 
-          {/* <Modal
+          <HeaderContentModal
             isOpen={isModalOpen}
             onClose={handleModalToggle}
             className='py-3 mt-2 rounded-2xl w-60'
           >
             <ul className='text-sm text-gray-800'>
               <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer'>회원 가입</li>
-              <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer'>로그인</li>
+              <li
+                className='px-4 py-3 hover:bg-gray-100 cursor-pointer'
+                onClick={handleLoginClick}
+              >
+                로그인
+              </li>
               <hr className='my-2' />
               <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer'>
                 당신의 공간을 에어비앤비하세요
               </li>
               <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer'>도움말 센터</li>
             </ul>
-          </Modal> */}
+          </HeaderContentModal>
         </div>
+        {/* <Search /> */}
       </div>
+
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={handleLoginModalClose}
+      />
     </>
   )
 }
+
 export default HeaderContent

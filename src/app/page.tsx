@@ -1,24 +1,15 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
-    <div className='w-full '>
-      {/* 레이아웃  */}
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawdv
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd=
+    <div className='w-full'>
+      <div className='flex justify-center'>
+        <Link href={'/rooms/1'}>
+            <button className='text-2xl font-bold border-solid border-2 border-black py-4 px-4 mt-4'>
+              Detail Page로 이동
+            </button>
+        </Link>
+      </div>
     </div>
   )
 }

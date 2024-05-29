@@ -10,7 +10,7 @@ const RootLayout = ({ children }) => {
     <html lang='en'>
       <body>
         <div className='flex flex-col bg-white h-60'>
-          <header className={`fixed bg-white w-full main-padding-list`}>
+          <header className={`fixed bg-white w-full main-padding-list z-20`}>
             <div className='flex py-5 items-center justify-between relative'>
               <HeaderContent />
               <Search />

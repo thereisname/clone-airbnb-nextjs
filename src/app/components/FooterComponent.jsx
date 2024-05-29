@@ -1,10 +1,10 @@
-"use client";
+'use client'
 
 import React, { useState } from 'react'
-import facebookIcon from '@/../public/assets/facebook.svg'
-import twitterIcon from '@/../public/assets/twitter.svg'
-import instagramIcon from '@/../public/assets/instagram.svg'
-import linkedinIcon from '@/../public/assets/linkedin.svg'
+const facebookIcon = '/assets/facebook.svg'
+const twitterIcon = '/assets/twitter.svg'
+const instagramIcon = '/assets/instagram.svg'
+const linkedinIcon = '/assets/linkedin.svg'
 
 const tabs = [
   {
@@ -83,7 +83,7 @@ function FooterComponent() {
   const [activeTab, setActiveTab] = useState('popular')
 
   return (
-    <footer className='bg-gray-100 py-10'>
+    <footer className='bg-gray-100 py-10 main-padding-list'>
       <div className='container mx-auto px-4'>
         <div className='mb-8'>
           <h5 className='text-xl font-bold mb-4'>다음 여행을 위한 추천 여행지</h5>

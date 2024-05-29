@@ -45,7 +45,7 @@ const HeaderContent = () => {
           <HeaderContentModal
             isOpen={isModalOpen}
             onClose={handleModalToggle}
-            className='py-3 mt-2 rounded-2xl w-60'
+            className='py-3 mt-2 rounded-2xl w-70'
           >
             <ul className='text-sm text-gray-800'>
               <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer'>회원 가입</li>
@@ -53,7 +53,7 @@ const HeaderContent = () => {
                 로그인
               </li>
               <hr className='my-2' />
-              <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer'>
+              <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer whitespace-nowrap'>
                 당신의 공간을 에어비앤비하세요
               </li>
               <li className='px-4 py-3 hover:bg-gray-100 cursor-pointer'>도움말 센터</li>

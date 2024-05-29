@@ -4,6 +4,7 @@ import Categories from '@/app/components/Categories/Categories'
 import '@/app/styles/globals.css'
 import HeaderContent from './components/HeaderContent'
 import Search from './components/Search'
+import Grid from '@/app/components/slider/Grid'
 
 const RootLayout = ({ children }) => {
   return (
@@ -21,11 +22,15 @@ const RootLayout = ({ children }) => {
           {/* Categories의 부모 div에 relative와 z-index 추가 */}
           <div className='flex justify-center mt-24 relative z-10'>
             <Categories padding='main-padding-list' />
+            
+            
           </div>
+          <Grid />
           {/* main 요소에 relative와 z-index 추가 */}
           <main className='my-5 w-full flex justify-center main-padding-list relative z-20'>
             {children}
           </main>
+          
           <FooterComponent />
         </div>
       </body>

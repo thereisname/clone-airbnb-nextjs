@@ -10,7 +10,7 @@ const Grid = () => {
     fetch('/assets/brief-info.json')
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('네트워크 응답 없음');
         }
         return response.json();
       })
@@ -24,11 +24,11 @@ const Grid = () => {
   }, []);
 
   if (!data || !data.accommodationInfo) {
-    return <div>Loading...</div>;
+    return <div>로딩 중 입니다....</div>;
   }
 
   return (
-    <div className="grid pt-24 pb-8 mx-auto max-w-screen-2xl">
+    <div className="grid pt-24 pb-8 mx-auto max-w-screen-full">
       <Cards accommodationInfo={data.accommodationInfo} />
     </div>
   );

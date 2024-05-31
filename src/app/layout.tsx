@@ -16,13 +16,11 @@ const RootLayout = ({ children }) => {
             <div className='flex items-center justify-between relative py-5'>
               <HeaderContent />
               <Search />
-              
             </div>
           </header>
-          <div className='flex justify-center mt-12 relative z-10'>
+          <div className='flex justify-center mt-12 z-10'>
             <Category />
           </div>
-          <Grid />
           {/* main 요소에 relative와 z-index 추가 */}
           <main className='my-5 w-full flex justify-center main-padding-list relative z-20'>
             {children}

@@ -5,25 +5,22 @@ import '@/app/styles/globals.css'
 import HeaderContent from './components/HeaderContent'
 import Search from './components/Search'
 import Grid from '@/app/components/slider/Grid'
+import Category from '@/app/components/Categories/Category'
 
 const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
       <body>
-        {/* 부모 div에 relative와 z-index 추가 */}
         <div className='flex flex-col bg-white min-h-screen relative'>
-          {/* header에 z-index 값 추가 */}
           <header className='fixed bg-white w-full main-padding-list z-40'>
             <div className='flex items-center justify-between relative py-5'>
               <HeaderContent />
               <Search />
+              
             </div>
           </header>
-          {/* Categories의 부모 div에 relative와 z-index 추가 */}
-          <div className='flex justify-center mt-24 relative z-10'>
-            <Categories padding='main-padding-list' />
-            
-            
+          <div className='flex justify-center mt-12 relative z-10'>
+            <Category />
           </div>
           <Grid />
           {/* main 요소에 relative와 z-index 추가 */}

@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className='w-full '>
-      {/* 레이아웃  */}
+      {/* 레이아웃 
       awdawdawdawdawdawdadwadawdawdawdawd
       <br />
       awdawdawdawdawdawdadwadawdawdawdawd
@@ -18,7 +18,7 @@ export default function Home() {
       <br />
       awdawdawdawdawdawdadwadawdawdawdawd
       <br />
-      awdawdawdawdawdawdadwadawdawdawdawd=
+      awdawdawdawdawdawdadwadawdawdawdawd= */}
     </div>
   )
 }

@@ -28,7 +28,7 @@ const Grid = () => {
   }
 
   return (
-    <div className="grid pt-24 pb-8 mx-auto max-w-screen-full">
+    <div className="grid pt-40 pb-8 mx-auto max-w-screen-full">
       <Cards accommodationInfo={data.accommodationInfo} />
     </div>
   );

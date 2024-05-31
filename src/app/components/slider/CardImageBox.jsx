@@ -16,7 +16,6 @@ export default function CardImageBox({ images, fit = 'cover' }) {
 
     <div>
       <Swiper
-        spaceBetween={20}
         slidesPerView={1}
         lazy={true}
         pagination={{

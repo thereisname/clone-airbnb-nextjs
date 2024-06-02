@@ -63,7 +63,6 @@ const DetailCalendar = ({ py }) => {
           </div>
         </div>
       </div>
-      
     </div>
   )
 }

@@ -10,7 +10,7 @@
 }
 
 .main-padding-list {
-  padding: 0 clamp(min(1vw, 20rem), 5vw, max(100%, 55rem));
+  padding: 0 clamp(min(1vw, 20rem), 3vw, max(100%, 55rem));
   transition: padding 0.3s ease;
 }
 

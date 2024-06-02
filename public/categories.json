@@ -83,35 +83,6 @@
         { 
             "img" :"/assets/categories-icons/Tree house.svg" ,
             "imgname" : "트리하우스"
-        },
-        { 
-            "img" :"/assets/categories-icons/Kezhan.svg" ,
-            "imgname" : "케잔"
-        },
-        { 
-            "img" :"/assets/categories-icons/BBQ grill.svg" ,
-            "imgname" : "바베큐"
-        },
-        { 
-            "img" :"/assets/categories-icons/Lake area.svg" ,
-            "imgname" : "호숫가"
-        },
-        { 
-            "img" :"/assets/categories-icons/Hot tub.svg" ,
-            "imgname" : "사우나"
-        },
-        { 
-            "img" :"/assets/categories-icons/First aid kit.svg" ,
-            "imgname" : "병원 근처"
-        },
-        { 
-            "img" :"/assets/categories-icons/Gym.svg" ,
-            "imgname" : "운동 가능"
-        },
-        { 
-            "img" :"/assets/categories-icons/Air conditioning.svg" ,
-            "imgname" : "북극"
         }
-
     ]
 }

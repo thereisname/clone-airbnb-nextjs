@@ -1,4 +1,3 @@
-import HeaderNav from '@/app/components/HeaderNav'
 import FooterComponent from '@/app/components/FooterComponent'
 import '@/app/styles/globals.css'
 import HeaderContent from './components/HeaderContent'

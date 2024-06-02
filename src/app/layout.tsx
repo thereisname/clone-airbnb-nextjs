@@ -4,7 +4,6 @@ import '@/app/styles/globals.css'
 import HeaderContent from './components/HeaderContent'
 import Search from './components/Search'
 
-
 const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
@@ -17,10 +16,8 @@ const RootLayout = ({ children }) => {
             </div>
           </header>
           {/* main 요소에 relative와 z-index 추가 */}
-          <main className='my-48 justify-center main-padding-list relative'>
-            {children}
-          </main>
-          
+          <main className='my-48 justify-center main-padding-list relative'>{children}</main>
+
           {/* <FooterComponent /> */}
         </div>
       </body>

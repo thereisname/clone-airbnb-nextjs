@@ -1,0 +1,50 @@
+.category-swiper-button-prev,
+.category-swiper-button-next {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid gray;
+}
+
+.category-swiper-button-prev img,
+.category-swiper-button-next img {
+  width: 16px;
+  height: 16px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .category-swiper-button-prev,
+  .category-swiper-button-next {
+    width: 30px;
+    height: 30px;
+    background-size: 15px 15px;
+  }
+
+  .category-swiper-button-prev img,
+  .category-swiper-button-next img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-swiper-button-prev,
+  .category-swiper-button-next {
+    width: 25px;
+    height: 25px;
+    background-size: 12px 12px;
+  }
+
+  .category-swiper-button-prev img,
+  .category-swiper-button-next img {
+    width: 10px;
+    height: 10px;
+  }
+}

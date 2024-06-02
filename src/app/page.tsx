@@ -1,24 +1,17 @@
+import Categories from './components/Categories/Categories'
+import CardSlider from './components/slider/CardSlider'
+
+
 export default function Home() {
+  // (1) FIXME : Root Page.tsx에 Category와 Grid 들어가야 함 
+  // TODO : Grid 컴포넌트명 변경
   return (
-    <div className='w-full '>
-      {/* 레이아웃  */}
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawdv
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd
-      <br />
-      awdawdawdawdawdawdadwadawdawdawdawd=
+    <div>
+      
+        <Categories />
+        <CardSlider />
+      
+      
     </div>
   )
 }

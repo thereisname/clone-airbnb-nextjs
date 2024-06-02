@@ -9,7 +9,7 @@ const Categories = () => {
 
   useEffect(() => {
     // JSON 데이터 fetch
-    fetch('/categories.json') // 경로를 절대 경로로 설정
+    fetch('/categories.json')
       .then((response) => response.json())
       .then((data) => setCategories(data.desc))
       .catch((error) => console.error('Error fetching data:', error))

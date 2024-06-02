@@ -1,38 +1,39 @@
-import DetailCalendar from '@/app/rooms/[accommodationId]/DetailCalendar'
-import DetailFeatures from '@/app/rooms/[accommodationId]/DetailFeature'
-import DetailGallery from '@/app/rooms/[accommodationId]/DetailGallery'
-import DetailHostInfo from '@/app/rooms/[accommodationId]/DetailHostInfo'
-import DetailSubTitle from '@/app/rooms/[accommodationId]/DetailSubTitle'
-import DetailTitle from '@/app/rooms/[accommodationId]/DetailTitle'
-import ReservationComponent from '@/app/rooms/[accommodationId]/ReservationComponent'
-// import Layout from './Layout.jsx'
-import DetailReview from '@/app/rooms/[accommodationId]/DetailReview.jsx'
-import DetailAccommodationInfo from '@/app/rooms/[accommodationId]/DetailAccommodation.jsx'
+import React from 'react'
+import DetailTitle from './DetailTitle'
+import DetailGallery from './DetailGallery'
+import DetailFeatures from './DetailFeature'
+import DetailHostInfo from './DetailHostInfo'
+import DetailSubTitle from './DetailSubTitle'
+import DetailReview from './DetailReview'
+import DetailCalendar from './DetailCalendar'
+import DetailAccommodationInfo from './DetailAccommodation'
+import ReservationComponent from './ReservationComponent'
 
-const DetailLayout = ({ children }) => {
+const DetailLayout = ({ accommodation }) => {
+  if (!accommodation) {
+    return <div>Loading...</div>
+  }
+
   return (
-    // <Layout padding={'main-padding-detail'}>
     <div className='max-w-full xl:w-[1120px] gap-10'>
-      <DetailTitle />
-      <DetailGallery />
+      <DetailTitle accommodation={accommodation} />
+      <DetailGallery images={accommodation.imageUrl} />
       <div className='flex flex-wrap my-10'>
         <div className='flex-1'>
-          <DetailSubTitle />
-          <DetailFeatures />
-          <DetailHostInfo />
+          <DetailSubTitle accommodation={accommodation} />
+          <DetailFeatures amenities={accommodation.amenities} />
+          <DetailHostInfo hostName={accommodation.hostName} hostSince={accommodation.hostSince} />
         </div>
         <div className='flex justify-center md:justify-end w-full md:w-auto'>
-          <ReservationComponent />
-          {/* 그거 이름이 모였지?? 가격정보?? */}
+          <ReservationComponent pricePerDay={accommodation.pricePerDay} />
         </div>
       </div>
-      <DetailCalendar py={'py-12'} />
+      <DetailCalendar py='py-12' />
       <hr />
-      <DetailReview />
+      <DetailReview reviews={accommodation.reviews} />
       <hr />
-      <DetailAccommodationInfo />
+      <DetailAccommodationInfo desc={accommodation.desc} />
     </div>
-    // </Layout>
   )
 }
 

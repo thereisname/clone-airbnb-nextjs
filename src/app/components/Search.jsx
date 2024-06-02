@@ -35,7 +35,7 @@ const Search = () => {
   }
 
   return (
-    <div className='absolute w-full top-16 lg:top-[2rem]'>
+    <div className='absolute w-full top-20 lg:top-[2rem]'>
       <nav className='absolute left-1/2 transform -translate-x-1/2'>
         <ul className='flex justify-center gap-4'>
           <li>숙소</li>

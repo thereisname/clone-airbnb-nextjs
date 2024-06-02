@@ -15,24 +15,26 @@ const DetailLayout = ({ accommodation }) => {
   }
 
   return (
-    <div className='max-w-full xl:w-[1120px] gap-10'>
-      <DetailTitle accommodation={accommodation} />
-      <DetailGallery images={accommodation.imageUrl} />
-      <div className='flex flex-wrap my-10'>
-        <div className='flex-1'>
-          <DetailSubTitle accommodation={accommodation} />
-          <DetailFeatures amenities={accommodation.amenities} />
-          <DetailHostInfo hostName={accommodation.hostName} hostSince={accommodation.hostSince} />
+    <div className='main-padding-detail'>
+      <div className='max-w-full xl:w-[1120px] mx-auto'>
+        <DetailTitle accommodation={accommodation} />
+        <DetailGallery images={accommodation.imageUrl} />
+        <div className='flex flex-wrap my-10'>
+          <div className='flex-1'>
+            <DetailSubTitle accommodation={accommodation} />
+            <DetailFeatures amenities={accommodation.amenities} />
+            <DetailHostInfo hostName={accommodation.hostName} hostSince={accommodation.hostSince} />
+          </div>
+          <div className='flex justify-center md:justify-end w-full md:w-auto'>
+            <ReservationComponent pricePerDay={accommodation.pricePerDay} />
+          </div>
         </div>
-        <div className='flex justify-center md:justify-end w-full md:w-auto'>
-          <ReservationComponent pricePerDay={accommodation.pricePerDay} />
-        </div>
+        <DetailCalendar py='py-12' />
+        <hr />
+        <DetailReview reviews={accommodation.reviews} />
+        <hr />
+        <DetailAccommodationInfo desc={accommodation.desc} />
       </div>
-      <DetailCalendar py='py-12' />
-      <hr />
-      <DetailReview reviews={accommodation.reviews} />
-      <hr />
-      <DetailAccommodationInfo desc={accommodation.desc} />
     </div>
   )
 }

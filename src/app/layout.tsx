@@ -7,17 +7,17 @@ const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
       <body>
-        <div className='flex flex-col bg-white min-h-screen relative'>
-          <header className='fixed bg-white w-full main-padding-list z-30'>
-            <div className='flex items-center justify-between relative py-5'>
-              <HeaderContent />
-              <Search />
-            </div>
-          </header>
-          {/* main 요소에 relative와 z-index 추가 */}
-          <main className='my-48 justify-center main-padding-list relative'>{children}</main>
-          <FooterComponent />
-        </div>
+        <header
+          className={`fixed top-0 left-0 right-0 bg-white w-full z-20 h-52 lg:h-40 main-padding-list`}
+        >
+          <div className='flex items-center justify-between relative py-5'>
+            <HeaderContent />
+            <Search />
+          </div>
+        </header>
+        {/* main 요소에 relative와 z-index 추가 */}
+        <main className='relative pt-56 lg:pt-48'>{children}</main>
+        <FooterComponent />
       </body>
     </html>
   )

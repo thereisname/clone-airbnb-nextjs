@@ -16,7 +16,7 @@ const RootLayout = ({ children }) => {
             </div>
           </header>
           {/* main 요소에 relative와 z-index 추가 */}
-          <main className='my-48 justify-center main-padding-list relative'>{children}</main>
+          <main className='my-48 mx-6 justify-center main-padding-list relative'>{children}</main>
 
           {/* <FooterComponent /> */}
         </div>

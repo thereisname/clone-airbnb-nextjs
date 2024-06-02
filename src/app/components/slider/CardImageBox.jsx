@@ -14,7 +14,6 @@ export default function CardImageBox({ images, fit = 'cover' }) {
     <div>
       <Swiper
         slidesPerView={1}
-        lazy={true}
         pagination={{
           clickable: true,
         }}
@@ -35,6 +34,7 @@ export default function CardImageBox({ images, fit = 'cover' }) {
             />
           </SwiperSlide>
         ))}
+
         <div className='swiper-button-next-custom swiper-button-custom'></div>
         <div className='swiper-button-prev-custom swiper-button-custom'></div>
       </Swiper>

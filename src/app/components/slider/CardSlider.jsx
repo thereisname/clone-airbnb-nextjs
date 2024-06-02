@@ -24,7 +24,7 @@ const CardSlider = () => {
   }, [])
 
   return (
-    <div className='grid relative mt-16 pb-8 max-w-screen-full'>
+    <div className='grid relative mt-8 pb-8 max-w-screen-full'>
       {data ? <Cards accommodationInfo={data.accommodationInfo} /> : <div>Loading...</div>}
     </div>
   )

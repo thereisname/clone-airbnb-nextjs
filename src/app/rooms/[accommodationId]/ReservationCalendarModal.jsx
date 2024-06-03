@@ -1,10 +1,18 @@
-// ReservationCalendarModal.jsx
 'use client'
 
 import React, { useEffect, useRef } from 'react'
 import DetailCalendar from './DetailCalendar'
 
-const ReservationCalendarModal = ({ isOpen, onRequestClose }) => {
+const ReservationCalendarModal = ({
+  isOpen, 
+  onRequestClose,
+  checkInDate,
+  checkOutDate,
+  onDateClick,
+  clearDates,
+  currentMonth,
+  setCurrentMonth
+}) => {
   const modalRef = useRef(null)
 
   useEffect(() => {
@@ -45,7 +53,16 @@ const ReservationCalendarModal = ({ isOpen, onRequestClose }) => {
         >
           &times;
         </button>
-        <DetailCalendar py="py-6" className="modal-calendar" />
+        <DetailCalendar 
+          py="py-6"
+          className="modal-calendar"
+          checkInDate={checkInDate}
+          checkOutDate={checkOutDate}
+          onDateClick={onDateClick}
+          clearDates={clearDates}
+          currentMonth={currentMonth}
+          setCurrentMonth={setCurrentMonth}
+        />
       </div>
     </div>
   )

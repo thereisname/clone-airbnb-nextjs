@@ -17,7 +17,13 @@ import {
 } from 'date-fns'
 import { ko } from 'date-fns/locale' // 한글 로케일을 불러옵니다.
 
-const CalendarLayout = ({ currentMonth, nextMonth, onDateClick, selectedDates, setCurrentMonth }) => {
+const CalendarLayout = ({
+  currentMonth,
+  nextMonth,
+  onDateClick,
+  selectedDates,
+  setCurrentMonth,
+}) => {
   const { checkInDate, checkOutDate } = selectedDates
 
   const renderHeader = (month, isNext) => {
@@ -31,7 +37,9 @@ const CalendarLayout = ({ currentMonth, nextMonth, onDateClick, selectedDates, s
             &lt;
           </button>
         )}
-        <h2 className='text-lg text-center w-full'>{format(month, 'yyyy년 MMMM', { locale: ko })}</h2>
+        <h2 className='text-lg text-center w-full'>
+          {format(month, 'yyyy년 MMMM', { locale: ko })}
+        </h2>
         {isNext && (
           <button
             onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}

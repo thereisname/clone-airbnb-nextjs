@@ -1,6 +1,4 @@
-import HeaderNav from '@/app/components/HeaderNav'
 import FooterComponent from '@/app/components/FooterComponent'
-import Categories from '@/app/components/Categories/Categories'
 import '@/app/styles/globals.css'
 import HeaderContent from './components/HeaderContent'
 import Search from './components/Search'
@@ -9,16 +7,16 @@ const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
       <body>
-        <div className='flex flex-col bg-white h-60'>
-          <header className={`fixed py-5 bg-white w-full main-padding-list`}>
-            <div className='flex items-center justify-between relative'>
-              <HeaderContent />
-            </div>
-          </header>
-          <Search />
-          <Categories padding={'main-padding-list'} />
-        </div>
-        <main className='my-5 w-full flex justify-center main-padding-list'>{children}</main>
+        <header
+          className={`fixed top-0 left-0 right-0 bg-white w-full z-20 h-52 lg:h-40 main-padding-list`}
+        >
+          <div className='flex items-center justify-between relative py-5'>
+            <HeaderContent />
+            <Search />
+          </div>
+        </header>
+        {/* main 요소에 relative와 z-index 추가 */}
+        <main className='relative pt-56 lg:pt-48'>{children}</main>
         <FooterComponent />
       </body>
     </html>

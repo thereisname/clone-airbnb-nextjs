@@ -1,0 +1,78 @@
+/* Swiper 네비게이션 버튼 커스텀 스타일 */
+.swiper-button-next-custom,
+.swiper-button-prev-custom {
+  position: absolute; /* 버튼의 위치를 절대 위치로 설정 */
+  top: 50%; /* 버튼을 세로 가운데에 위치시킴 */
+  width: 32px; /* 버튼의 너비를 30px로 설정 */
+  height: 32px; /* 버튼의 높이를 30px로 설정 */
+  margin-top: -15px; /* 버튼을 세로 가운데로 맞추기 위한 마진 설정 */
+  z-index: 10; /* 버튼이 다른 요소 위에 위치하도록 z-index 설정 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+  background-color: rgba(255, 255, 255, 0.886); /* 호버 시 배경 색상 설정 */
+  border-radius: 50%; /* 버튼을 원형으로 변경 */
+  background-size: 15px 15px; /* 배경 이미지 크기를 30px로 설정 */
+  background-repeat: no-repeat; /* 배경 이미지 반복 설정 해제 */
+  background-position: center; /* 배경 이미지 가운데 정렬 */
+  transition: transform 0.2s, opacity 0.2s; /* 변환 및 투명도 애니메이션 설정 */
+}
+
+.swiper-button-next-custom {
+  right: 10px; /* 오른쪽에서 10px 떨어진 위치에 배치 */
+  background-size: 12px 12px; /* 배경 이미지 크기 설정 */
+  background-image: url('/assets/categories-icons/right-arrow.svg'); /* 기본 상태의 배경 이미지 설정 */
+}
+
+.swiper-button-prev-custom {
+  left: 10px; /* 왼쪽에서 10px 떨어진 위치에 배치 */
+  background-size: 12px 12px; /* 배경 이미지 크기 설정 */
+  background-image: url('/assets/categories-icons/left-arrow.svg'); /* 기본 상태의 배경 이미지 설정 */
+}
+
+.swiper-button-next-custom:hover,
+.swiper-button-prev-custom:hover {
+  background-size: 12px 12px; /* 호버 시 배경 이미지 크기 설정 */
+  background-image: url('/assets/categories-icons/bold-right-arrow.svg'); /* 호버 시 배경 이미지 변경 */
+}
+
+.swiper-button-prev-custom:hover {
+    background-size: 12px 12px; /* 호버 시 배경 이미지 크기 설정 */
+    background-image: url('/assets/categories-icons/bold-left-arrow.svg'); /* 호버 시 배경 이미지 변경 */
+}
+
+/* Optional: darken background on hover */
+.swiper-button-next-custom:hover,
+.swiper-button-prev-custom:hover {
+    transform: scale(1.1);
+  background-color: rgb(255, 255, 255); /* 호버 시 배경 색상 설정 */
+  border-radius: 50%; /* 버튼을 원형으로 변경 */
+}
+
+.swiper-pagination-bullet {
+    background-color: rgb(232, 232, 232);  /* 기본 상태에서 색상 설정 */
+    width: 5px; /* 버튼의 너비를 30px로 설정 */
+    height: 5px; /* 버튼의 높이를 30px로 설정 */
+    margin: 0 2px !important;
+    opacity: 0.5;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: white;
+    opacity: 1;  /* 활성화된 상태에서 색상 설정 */
+  }
+
+/* 이미지 크기 통일을 위한 스타일 */
+.swiper-slide {
+  position: relative;
+  width: 100%; /*slide img의 가로 길이 설정*/ 
+  padding-top: 95%; /* 높이를 너비의 90%로 설정 */
+}
+
+.swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 기본적으로 cover로 설정 */
+  border-radius: 12px; /* 모서리를 둥글게 설정 */
+}

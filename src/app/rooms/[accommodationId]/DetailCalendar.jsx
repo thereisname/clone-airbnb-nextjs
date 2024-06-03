@@ -1,36 +1,19 @@
-// DetailCalendar.js
 'use client'
-import React, { useState } from 'react'
-import { format, differenceInDays, addMonths, isBefore } from 'date-fns'
+import React from 'react'
+import { format, differenceInDays, addMonths } from 'date-fns'
 import Calendar from './CalendarLayout'
+import { calculateNights } from '@/common/utils'
 
-const DetailCalendar = ({ py, className }) => {
-  const [currentMonth, setCurrentMonth] = useState(new Date())
-  const [checkInDate, setCheckInDate] = useState(null)
-  const [checkOutDate, setCheckOutDate] = useState(null)
-
-  const onDateClick = (day) => {
-    if (!checkInDate || (checkInDate && checkOutDate)) {
-      setCheckInDate(day)
-      setCheckOutDate(null)
-    } else if (isBefore(day, checkInDate)) {
-      setCheckInDate(day)
-    } else {
-      setCheckOutDate(day)
-    }
-  }
-
-  const clearDates = () => {
-    setCheckInDate(null)
-    setCheckOutDate(null)
-  }
-
-  const calculateNights = () => {
-    if (checkInDate && checkOutDate) {
-      return differenceInDays(checkOutDate, checkInDate)
-    }
-    return 0
-  }
+const DetailCalendar = ({ 
+  py, 
+  className, 
+  checkInDate, 
+  checkOutDate, 
+  onDateClick, 
+  clearDates, 
+  currentMonth, 
+  setCurrentMonth 
+}) => {
 
   const nextMonth = addMonths(currentMonth, 1)
 
@@ -40,7 +23,7 @@ const DetailCalendar = ({ py, className }) => {
         <h1 className='text-[22px] text-center'>가평군에서 {calculateNights()}박</h1>
         {checkInDate && checkOutDate ? (
           <p className='text-gray-600 text-[14px] pt-2 text-center'>
-            {format(checkInDate, 'yyyy년 MMMM d일')} - {format(checkOutDate, 'yyyy년 MMMM d일')}
+            {format(checkInDate, 'yyyy년 MM월 d일')} - {format(checkOutDate, 'yyyy년 MM월 d일')}
           </p>
         ) : (
           <div className='text-gray-600 text-[14px] pt-2 text-center'>

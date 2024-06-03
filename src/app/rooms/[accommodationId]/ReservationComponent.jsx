@@ -1,10 +1,8 @@
 'use client'
+import formatPrice from '@/common/utils'
 import React from 'react'
 import { useState } from 'react'
 
-function formatPrice(price) {
-  return new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW' }).format(price)
-} // 10000을 ₩10,000으로 변환하는 함수
 
 function FeeInfo({ feeText, fee }) {
   return (
@@ -15,9 +13,8 @@ function FeeInfo({ feeText, fee }) {
   )
 }
 
-function ReservationComponent() {
-  const price = 1200000 // 임시 데이터
-  const formattedPrice = formatPrice(price)
+function ReservationComponent({pricePerDay}) {
+  const formattedPrice = formatPrice(pricePerDay) // formatting된 가격
   const [isReserved, setIsReserved] = useState(false) // 예약 상태 받는 state
 
   return (

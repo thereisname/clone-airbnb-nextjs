@@ -27,6 +27,9 @@ const AccommodationDetailPage = () => {
   const { accommodationId } = useParams()
   const [accommodation, setAccommodation] = useState(null)
   const [error, setError] = useState(null)
+  const [checkInDate, setCheckInDate] = useState(null)
+  const [checkOutDate, setCheckOutDate] = useState(null)
+  const [currentMonth, setCurrentMonth] = useState(new Date())
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,6 +45,22 @@ const AccommodationDetailPage = () => {
       fetchData()
     }
   }, [accommodationId])
+
+  const onDateClick = (day) => {
+    if (!checkInDate || (checkInDate && checkOutDate)) {
+      setCheckInDate(day)
+      setCheckOutDate(null)
+    } else if (day < checkInDate) {
+      setCheckInDate(day)
+    } else {
+      setCheckOutDate(day)
+    }
+  }
+
+  const clearDates = () => {
+    setCheckInDate(null)
+    setCheckOutDate(null)
+  }
 
   if (error) {
     return <div>{error}</div>
@@ -63,10 +82,26 @@ const AccommodationDetailPage = () => {
             <DetailHostInfo hostName={accommodation.hostName} hostSince={accommodation.hostSince} />
           </div>
           <div className='flex justify-center md:justify-end w-full md:w-auto'>
-            <ReservationComponent pricePerDay={accommodation.pricePerDay} />
+            <ReservationComponent 
+              pricePerDay={accommodation.pricePerDay}
+              checkInDate={checkInDate}
+              checkOutDate={checkOutDate}
+              onDateClick={onDateClick}
+              clearDates={clearDates}
+              currentMonth={currentMonth}
+              setCurrentMonth={setCurrentMonth}
+            />
           </div>
         </div>
-        <DetailCalendar py='py-12' />
+        <DetailCalendar 
+          py='py-12'
+          checkInDate={checkInDate}
+          checkOutDate={checkOutDate}
+          onDateClick={onDateClick}
+          clearDates={clearDates}
+          currentMonth={currentMonth}
+          setCurrentMonth={setCurrentMonth}
+        />
         <hr />
         <DetailReview reviews={accommodation.reviews} />
         <hr />

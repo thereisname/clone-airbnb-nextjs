@@ -7,7 +7,7 @@ import GuestFavorite from './GuestFavorite'
 export default function Cards({ accommodationInfo }) {
   return (
     <div className='card'>
-      <ul className='card-wrap grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2'>
+      <ul className='card-wrap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-2'>
         {accommodationInfo.map((item) => (
           <li className='card-item p-2' key={item.accommodationId}>
             <div className='relative'>
@@ -18,12 +18,28 @@ export default function Cards({ accommodationInfo }) {
                 </div>
               )}
             </div>
-            <div className='txt mt-2 text-black'>
-              <h3 className='title font-semibold'>{item.accommodationName}</h3>
-              <div className='host text-gray-600'>
-                <p>호스트: {item.hostName} 님</p>
+            <div className='flex justify-between'>
+              <div className='txt mt-2 text-black'>
+                <h3 className='title font-semibold'>
+                  {item.locationName.length > 21
+                    ? `${item.locationName.substring(0, 15)}...`
+                    : item.locationName}
+                </h3>
+                <div className='host text-gray-600'>
+                  <p>호스트: {item.hostName} 님</p>
+                </div>
+                <span className='flex'>
+                  <div className='price  font-semibold pr-2'>
+                    {' '}
+                    ₩{new Intl.NumberFormat('ko-KR').format(item.pricePerDay)}
+                  </div>
+                  /박
+                </span>
               </div>
-              <span className='price font-bold'>${item.pricePerDay}</span>
+              <div className='p-2 flex justify-between font-medium'>
+                <img src='/assets/star1.svg' alt='star icon' className='w-4 h-6 pr-1' />
+                {item.rating}
+              </div>
             </div>
           </li>
         ))}

@@ -11,8 +11,8 @@ export default function Cards({ accommodationInfo }) {
       <ul className='card-wrap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-2'>
         {accommodationInfo.map((item) => (
           <li key={item.accommodationId} className='card-item p-2'>
-            <Link href={`rooms/${item.accommodationId}`}>
-              <div>
+            <Link href={`rooms/${item.accommodationId}`} className='block'>
+              <div className='relative'>
                 <CardImageBox images={item.imageUrl} />
                 {item.guestFavorite && (
                   <div>

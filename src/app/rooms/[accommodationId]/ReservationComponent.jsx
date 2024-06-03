@@ -1,6 +1,7 @@
 'use client'
 import formatPrice from '@/common/utils'
 import React from 'react'
+import { AIRBNB_CHARGE_RATIO } from '@/common/env'
 import { useState } from 'react'
 
 
@@ -16,6 +17,8 @@ function FeeInfo({ feeText, fee }) {
 function ReservationComponent({pricePerDay}) {
   const formattedPrice = formatPrice(pricePerDay) // formatting된 가격
   const [isReserved, setIsReserved] = useState(false) // 예약 상태 받는 state
+  const [night, setNight] = useState(1)
+  const [totalPrice, setTotalPrice] = useState(night * pricePerDay)
 
   return (
     <div className='w-[373px] h-[500px] relative shadow-lg rounded-xl border border-solid border-gray-300 p-6 bg-white'>
@@ -61,13 +64,13 @@ function ReservationComponent({pricePerDay}) {
       </div>
       <div className='mt-6 space-y-3'>
         {/*feeText에 price가 들어갔을 때도 처리해야 함 */}
-        <FeeInfo feeText='₩1,200,000 x 1박' fee={1200000}></FeeInfo>
-        <FeeInfo feeText='에어비앤비 서비스 수수료' fee={186353}></FeeInfo>
+        <FeeInfo feeText={`${formattedPrice} × ${night}박`} fee={totalPrice}></FeeInfo>
+        <FeeInfo feeText='에어비앤비 서비스 수수료' fee={totalPrice * AIRBNB_CHARGE_RATIO}></FeeInfo>
       </div>
       <div className='mt-4 border-t border-solid border-gray-200'></div>
       <div className='flex justify-between text-base font-medium mt-3'>
         <div className='text-black-800'>총 합계</div>
-        <div className='text-black-800'>{formatPrice(1200000 + 186353)}</div>
+        <div className='text-black-800'>{formatPrice(totalPrice)}</div>
       </div>
     </div>
   )

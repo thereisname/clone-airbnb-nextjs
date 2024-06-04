@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import 'tailwindcss/tailwind.css'
 
-function usePersonSelect(initialValue, onChange) {
+function usePersonSelect(initialValue, onChange, adjustAdultsIfZero) {
   const [person, setPerson] = useState(initialValue)
 
   const increment = () => {
     const newValue = person + 1
     setPerson(newValue)
     onChange(newValue)
+    if (adjustAdultsIfZero && person === 0) {
+      adjustAdultsIfZero()
+    }
   }
 
   const decrement = () => {
@@ -20,14 +23,42 @@ function usePersonSelect(initialValue, onChange) {
 }
 
 const GuestSearch = ({ onGuestsChange }) => {
-  const [adults, plusAdults, minusAdults] = usePersonSelect(0, (value) =>
-    onGuestsChange(value, 'adults'),
+  const adjustAdultsIfZero = () => {
+    if (adults === 0) {
+      setAdults(1)
+      onGuestsChange(1, 'adults')
+    }
+  }
+
+  const [adults, setAdults] = useState(0)
+
+  const [kids, plusKids, minusKids] = usePersonSelect(
+    0,
+    (value) => onGuestsChange(value, 'kids'),
+    adjustAdultsIfZero,
   )
-  const [kids, plusKids, minusKids] = usePersonSelect(0, (value) => onGuestsChange(value, 'kids'))
-  const [babies, plusBabies, minusBabies] = usePersonSelect(0, (value) =>
-    onGuestsChange(value, 'babies'),
+  const [babies, plusBabies, minusBabies] = usePersonSelect(
+    0,
+    (value) => onGuestsChange(value, 'babies'),
+    adjustAdultsIfZero,
   )
-  const [pets, plusPets, minusPets] = usePersonSelect(0, (value) => onGuestsChange(value, 'pets'))
+  const [pets, plusPets, minusPets] = usePersonSelect(
+    0,
+    (value) => onGuestsChange(value, 'pets'),
+    adjustAdultsIfZero,
+  )
+
+  const incrementAdults = () => {
+    const newValue = adults + 1
+    setAdults(newValue)
+    onGuestsChange(newValue, 'adults')
+  }
+
+  const decrementAdults = () => {
+    const newValue = adults > 0 ? adults - 1 : 0
+    setAdults(newValue)
+    onGuestsChange(newValue, 'adults')
+  }
 
   const renderButton = (count, increment, decrement) => (
     <div className='flex items-center space-x-4'>
@@ -57,7 +88,7 @@ const GuestSearch = ({ onGuestsChange }) => {
           <div className='text-base font-medium'>성인</div>
           <div className='text-sm text-gray-500'>13세 이상</div>
         </div>
-        {renderButton(adults, plusAdults, minusAdults)}
+        {renderButton(adults, incrementAdults, decrementAdults)}
       </div>
       <hr />
 

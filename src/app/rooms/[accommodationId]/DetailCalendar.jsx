@@ -4,23 +4,25 @@ import { format, differenceInDays, addMonths } from 'date-fns'
 import Calendar from './CalendarLayout'
 import { calculateNights } from '@/common/utils'
 
-const DetailCalendar = ({ 
-  py, 
-  className, 
-  checkInDate, 
-  checkOutDate, 
-  onDateClick, 
-  clearDates, 
-  currentMonth, 
-  setCurrentMonth 
+const DetailCalendar = ({
+  py,
+  className,
+  checkInDate,
+  checkOutDate,
+  onDateClick,
+  clearDates,
+  currentMonth,
+  setCurrentMonth,
+  locationAlias,
 }) => {
-
   const nextMonth = addMonths(currentMonth, 1)
 
   return (
     <div className={`bg-white rounded-lg ${py} ${className}`}>
       <div className='text-left mb-4'>
-        <h1 className='text-[22px] text-center'>가평군에서 {calculateNights()}박</h1>
+        <h1 className='text-[22px] text-center'>
+          {locationAlias}에서 {calculateNights(checkInDate, checkOutDate)}박
+        </h1>
         {checkInDate && checkOutDate ? (
           <p className='text-gray-600 text-[14px] pt-2 text-center'>
             {format(checkInDate, 'yyyy년 MM월 d일')} - {format(checkOutDate, 'yyyy년 MM월 d일')}

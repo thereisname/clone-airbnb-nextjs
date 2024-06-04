@@ -1,9 +1,35 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
+import SearchModal from '@/app/components/SearchModal'
+import { format, isBefore } from 'date-fns'
 
 const Search = () => {
+  const [checkInDate, setCheckInDate] = useState(null)
+  const [checkOutDate, setCheckOutDate] = useState(null)
   const [activeSection, setActiveSection] = useState(null)
+  const [travel, setTravel] = useState(null)
+  const [guests, setGuests] = useState({
+    adults: 0,
+    kids: 0,
+    babies: 0,
+    pets: 0,
+  })
   const searchRef = useRef(null)
+
+  const onDateClick = (day) => {
+    if (activeSection === 'checkin') {
+      setCheckInDate(day)
+      setActiveSection('checkout')
+    } else if (activeSection === 'checkout') {
+      if (isBefore(day, checkInDate)) {
+        setCheckInDate(day)
+        setCheckOutDate(null)
+        setActiveSection('checkout')
+      } else {
+        setCheckOutDate(day)
+      }
+    }
+  }
 
   const handleSectionClick = (section) => {
     setActiveSection(section)
@@ -11,10 +37,15 @@ const Search = () => {
 
   const handleClickOutside = (event) => {
     if (searchRef.current && !searchRef.current.contains(event.target)) {
-      console.log(event.target)
-      console.log(searchRef)
       setActiveSection(null)
     }
+  }
+
+  const handleGuestsChange = (value, type) => {
+    setGuests((prevGuests) => ({
+      ...prevGuests,
+      [type]: value,
+    }))
   }
 
   useEffect(() => {
@@ -34,6 +65,18 @@ const Search = () => {
     }
   }
 
+  const renderGuestText = () => {
+    const { adults, kids, babies, pets } = guests
+    const totalGuests = adults + kids
+    const guestList = []
+
+    if (totalGuests > 0) guestList.push(`게스트 ${totalGuests}`)
+    if (babies > 0) guestList.push(`유아 ${babies}`)
+    if (pets > 0) guestList.push(`반려동물 ${pets}`)
+
+    return guestList.length > 0 ? guestList.join(', ') : '게스트 추가'
+  }
+
   return (
     <div className='absolute w-full top-20 lg:top-[2rem]'>
       <nav className='absolute left-1/2 transform -translate-x-1/2'>
@@ -51,51 +94,76 @@ const Search = () => {
         }`}
         role='group'
       >
+        {/* 여행지 검색 */}
         <div
-          className={`flex items-center w-52 px-6 h-full rounded-full ${getSectionClass('destination')}`}
+          className={`flex items-center px-6 h-full rounded-full w-1/3 ${getSectionClass('destination')}`}
           onClick={() => handleSectionClick('destination')}
         >
           <label className='flex flex-col' role='group'>
             <span className='text-neutral-800 text-xs'>여행지</span>
-            <input className='text-neutral-500 text-sm bg-transparent' placeholder='여행지 검색' />
+            <input
+              className='text-neutral-500 text-sm bg-transparent'
+              placeholder={`${travel ?? '여행지 검색'}`}
+            />
           </label>
         </div>
 
-        <div className='h-2/5 border border-solid border-gray-200'></div>
+        <div className='h-2/5 border border-solid border-gray-200' />
 
-        <div
-          className={`flex items-center w-32 px-6 h-full rounded-full ${getSectionClass('checkin')}`}
-          onClick={() => handleSectionClick('checkin')}
-        >
-          <label className='flex flex-col'>
-            <span className='text-neutral-800 text-xs'>체크인</span>
-            <div className='text-neutral-500 text-sm'>날짜 추가</div>
-          </label>
+        {/* 체크인, 체크아웃 */}
+        <div className='flex items-center h-full w-1/3'>
+          <div
+            className={`flex w-1/2 items-center px-6 h-full rounded-full ${getSectionClass('checkin')}`}
+            onClick={() => handleSectionClick('checkin')}
+          >
+            <label className='flex flex-col'>
+              <span className='text-neutral-800 text-xs'>체크인</span>
+              <div className='text-neutral-500 text-sm'>
+                {checkInDate ? format(checkInDate, 'M월 d일') : '날짜 추가'}
+              </div>
+            </label>
+          </div>
+
+          <div className='h-2/5 border border-solid border-gray-200'></div>
+
+          <div
+            className={`flex w-1/2 items-center px-6 h-full rounded-full ${getSectionClass('checkout')}`}
+            onClick={() => handleSectionClick('checkout')}
+          >
+            <label className='flex flex-col'>
+              <span className='text-neutral-800 text-xs'>체크아웃</span>
+              <div className='text-neutral-500 text-sm'>
+                {checkOutDate ? format(checkOutDate, 'M월 d일') : '날짜 추가'}
+              </div>
+            </label>
+          </div>
         </div>
 
-        <div className='h-2/5 border border-solid border-gray-200'></div>
+        <div className='h-2/5 border border-solid border-gray-200' />
 
+        {/* 여행자 선택 */}
         <div
-          className={`flex items-center w-32 px-6 h-full rounded-full ${getSectionClass('checkout')}`}
-          onClick={() => handleSectionClick('checkout')}
-        >
-          <label className='flex flex-col'>
-            <span className='text-neutral-800 text-xs'>체크아웃</span>
-            <div className='text-neutral-500 text-sm'>날짜 추가</div>
-          </label>
-        </div>
-
-        <div className='h-2/5 border border-solid border-gray-200'></div>
-
-        <div
-          className={`flex items-center w-52 px-6 rounded-r-full rounded-full h-full ${getSectionClass('guests')}`}
+          className={`flex w-1/3 items-center px-6 rounded-r-full rounded-full h-full ${getSectionClass('guests')}`}
           onClick={() => handleSectionClick('guests')}
         >
           <label className='flex flex-col'>
             <span className='text-neutral-800 text-xs'>여행자</span>
-            <div className='text-neutral-500 text-sm'>게스트 추가</div>
+            <div className='text-neutral-500 text-sm'>{renderGuestText()}</div>
           </label>
         </div>
+
+        {activeSection && (
+          <SearchModal
+            closeModal={() => setActiveSection(null)}
+            activeSection={activeSection}
+            setTravel={setTravel}
+            setActiveSection={setActiveSection}
+            checkInDate={checkInDate}
+            checkOutDate={checkOutDate}
+            onDateClick={onDateClick}
+            handleGuestsChange={handleGuestsChange}
+          />
+        )}
 
         <button className='absolute right-3 w-12 h-12'>
           <img src='/assets/Group2.svg' alt='검색 버튼' />

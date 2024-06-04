@@ -4,10 +4,8 @@
       "accommodationId": 1,
       "accommodationName": "여주 남한강 전거도로1분, 금은모래 캠핑장3분, 썬밸리호텔5초",
       "locationName": "여주시, 한국의 방",
-      "briefRoomInfo": [
-        "이층 침대 6개",
-        "공용 욕실 2개"
-      ],
+      "locationAlias": "여주시",
+      "briefRoomInfo": ["이층 침대 6개", "공용 욕실 2개"],
       "guestFavorite": true,
       "rating": "4.78",
       "reviewCount": "23",
@@ -161,11 +159,8 @@
       "accommodationId": 2,
       "accommodationName": "{양양 죽도해변} 오션스테이 #2023신축 #오픈특가 할로우#6",
       "locationName": "Hyeonnam-myeon, Yangyang-gun, 한국의 레지던스 전체",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Yangyang-gun",
+      "briefRoomInfo": ["최대 인원 2명", "침실 1개", "욕실 1개"],
       "guestFavorite": false,
       "rating": "4.87",
       "reviewCount": "67",
@@ -228,11 +223,8 @@
       "accommodationId": 3,
       "accommodationName": "나인하우스 #독채",
       "locationName": "가평군, 한국의 저택 전체",
-      "briefRoomInfo": [
-        "최대 인원 8명",
-        "침실 3개",
-        "욕실 3개"
-      ],
+      "locationAlias": "가평군",
+      "briefRoomInfo": ["최대 인원 8명", "침실 3개", "욕실 3개"],
       "guestFavorite": false,
       "rating": "5.0",
       "reviewCount": "3",
@@ -299,12 +291,8 @@
       "accommodationId": 4,
       "accommodationName": "VILLA 포지타노(69평 전체) #하루한팀#모닥불&바베큐장#넓은 주차공간#확트인 전망",
       "locationName": "양평군, 한국의 별장 전체",
-      "briefRoomInfo": [
-        "최대 인원 8명",
-        "침실 4개",
-        "침실 7개",
-        "욕실 3개"
-      ],
+      "locationAlias": "양평군",
+      "briefRoomInfo": ["최대 인원 8명", "침실 4개", "침실 7개", "욕실 3개"],
       "guestFavorite": true,
       "rating": "4.93",
       "reviewCount": "213",
@@ -386,12 +374,8 @@
       "accommodationId": 5,
       "accommodationName": "강이바로앞 강변하우스. 예쁘고 넓은정원과 마당.데크에서 보는 풍경과 전망이 좋아요",
       "locationName": "Chilseong-myeon, Goesan, 한국의 게스트용 별채 전체",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실 1개",
-        "침대 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Chilseong-myeon, Goesan",
+      "briefRoomInfo": ["최대 인원 2명", "침실 1개", "침대 1개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.88",
       "reviewCount": "124",
@@ -464,12 +448,8 @@
       "accommodationId": 6,
       "accommodationName": "클로드에덴 : 트리하우스",
       "locationName": "Jipyeong-myeon, Yangpyeong-gun, 한국의 트리하우스",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실1 1개",
-        "침대 1개",
-        "욕실 1.5개"
-      ],
+      "locationAlias": "Jipyeong-myeon, Yangpyeong-gun",
+      "briefRoomInfo": ["최대 인원 2명", "침실1 1개", "침대 1개", "욕실 1.5개"],
       "guestFavorite": true,
       "rating": "4.96",
       "reviewCount": "94",
@@ -542,12 +522,8 @@
       "accommodationId": 7,
       "accommodationName": "Y1호 #포차바베큐 #독채 #불멍 #빔프로젝터#마샬 민트&크림 다락방",
       "locationName": "상면, 가평군, 한국의 게스트용 별채 전체",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실 1개",
-        "침대 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "상면, 가평군",
+      "briefRoomInfo": ["최대 인원 2명", "침실 1개", "침대 1개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.91",
       "reviewCount": "149",
@@ -620,11 +596,8 @@
       "accommodationId": 8,
       "accommodationName": "[ 마당있는 한옥 ]",
       "locationName": "Seosan-si, 한국의 집 전체",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "원룸",
-        "욕실 1개"
-      ],
+      "locationAlias": "Seosan-si",
+      "briefRoomInfo": ["최대 인원 2명", "원룸", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.97",
       "reviewCount": "121",
@@ -683,12 +656,8 @@
       "accommodationId": 9,
       "accommodationName": "파스텔 글램핑",
       "locationName": "Buk-myeon, Gapyeong-gun, 한국의 캠핑카의 개인실",
-      "briefRoomInfo": [
-        "최대 인원 4명",
-        "침실 1개",
-        "침대 2개",
-        "공동 사용 욕실 4개"
-      ],
+      "locationAlias": "Buk-myeon, Gapyeong-gun",
+      "briefRoomInfo": ["최대 인원 4명", "침실 1개", "침대 2개", "공동 사용 욕실 4개"],
       "guestFavorite": false,
       "rating": "4.39",
       "reviewCount": "23",
@@ -765,12 +734,8 @@
       "accommodationId": 10,
       "accommodationName": "{[천안터미널5분] Main Location ★인스타갬성,포근한숙소,주차장x,★방역&알콜소독",
       "locationName": "Dongnam-gu, Cheonan-si, 한국의 집 전체",
-      "briefRoomInfo": [
-        "최대 인원 4명",
-        "침실 2개",
-        "침대 3개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Dongnam-gu, Cheonan-si",
+      "briefRoomInfo": ["최대 인원 4명", "침실 2개", "침대 3개", "욕실 1개"],
       "guestFavorite": false,
       "rating": "4.82",
       "reviewCount": "304",
@@ -924,11 +889,8 @@
       "accommodationId": 11,
       "accommodationName": "홍천터미널 도보3분 | 마운틴뷰 | 무료주차 | 넷플릭스(개인계정) | 장기숙박 가능",
       "locationName": "홍천, 한국의 집 전체",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "홍천",
+      "briefRoomInfo": ["최대 인원 2명", "침실 1개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.96",
       "reviewCount": "28",
@@ -997,11 +959,8 @@
       "accommodationId": 12,
       "accommodationName": "[신불당, 천안아산역] 편안하고 감성적인 바이브가 넘치는 청춘하우스",
       "locationName": "Seobuk-gu, Cheonan-si, 한국의 집 전체",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Seobuk-gu, Cheonan-si",
+      "briefRoomInfo": ["최대 인원 2명", "침실 1개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.92",
       "reviewCount": "83",
@@ -1074,12 +1033,8 @@
       "accommodationId": 13,
       "accommodationName": "호재 (乎哉) Hojae 25평 독채숙소",
       "locationName": "Tanhyeon-myeon, Paju-si, 한국의 타운하우스 전체",
-      "briefRoomInfo": [
-        "최대 인원 4명",
-        "침실 1개",
-        "침대 2개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Tanhyeon-myeon, Paju-si",
+      "briefRoomInfo": ["최대 인원 4명", "침실 1개", "침대 2개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.88",
       "reviewCount": "124",
@@ -1142,12 +1097,8 @@
       "accommodationId": 14,
       "accommodationName": "신축/서울근교/대명인근/마당넓은집/온수풀무료/파격세일/연박할인/마감할인/불멍/독채실내풀빌라",
       "locationName": "Seo-myeon, Hongcheon-gun, 한국의 저택 전체",
-      "briefRoomInfo": [
-        "최대 인원 8명",
-        "침실 2개",
-        "침대 3개",
-        "욕실 2개"
-      ],
+      "locationAlias": "Seo-myeon, Hongcheon-gun",
+      "briefRoomInfo": ["최대 인원 8명", "침실 2개", "침대 3개", "욕실 2개"],
       "guestFavorite": true,
       "rating": "4.96",
       "reviewCount": "77",
@@ -1210,12 +1161,8 @@
       "accommodationId": 15,
       "accommodationName": "벽화마을 내 자쿠지 독채 한옥 [자사녹]",
       "locationName": "Gimcheon, 한국의 통나무집 전체",
-      "briefRoomInfo": [
-        "최대 인원 6명",
-        "침실 1개",
-        "침대 1개",
-        "욕실 2개"
-      ],
+      "locationAlias": "Gimcheon",
+      "briefRoomInfo": ["최대 인원 6명", "침실 1개", "침대 1개", "욕실 2개"],
       "guestFavorite": true,
       "rating": "4.83",
       "reviewCount": "6",
@@ -1277,11 +1224,8 @@
       "accommodationId": 16,
       "accommodationName": "동마루 캐빈",
       "locationName": "Nami-myeon, Geumsan, 한국의 게스트용 별채 전체",
-      "briefRoomInfo": [
-        "최대 인원 6명",
-        "침실 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Nami-myeon, Geumsan",
+      "briefRoomInfo": ["최대 인원 6명", "침실 1개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.96",
       "reviewCount": "16",
@@ -1344,11 +1288,8 @@
       "accommodationId": 17,
       "accommodationName": "태안에서 반려견과 함께 즐겁게 보낼 수 있는 위드독 독채 풀빌라(스파,애견)",
       "locationName": "Taean-gun, 한국의 펜션",
-      "briefRoomInfo": [
-        "침실 2개",
-        "침대 4개",
-        "욕실 2개"
-      ],
+      "locationAlias": "Taean-gun",
+      "briefRoomInfo": ["침실 2개", "침대 4개", "욕실 2개"],
       "guestFavorite": false,
       "rating": "5.00",
       "reviewCount": "4",
@@ -1434,12 +1375,8 @@
       "accommodationId": 18,
       "accommodationName": "한가로운 휴일의 시작 춘천 유유자적 삼동",
       "locationName": "Seo-myeon, Chuncheon-si, 한국의 집 전체",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실 1개",
-        "침대 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Seo-myeon, Chuncheon-si",
+      "briefRoomInfo": ["최대 인원 2명", "침실 1개", "침대 1개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.97",
       "reviewCount": "144",
@@ -1502,12 +1439,8 @@
       "accommodationId": 19,
       "accommodationName": "양양의 푸르름 속 맑은 자연을 느낄 수 있는 6.다온빌(스파/개별풀)",
       "locationName": "Seo-myeon, Yangyang, 한국의 펜션",
-      "briefRoomInfo": [
-        "최대 인원 10명",
-        "침실 2개",
-        "침대 2개",
-        "욕실 2개"
-      ],
+      "locationAlias": "Seo-myeon, Yangyang",
+      "briefRoomInfo": ["최대 인원 10명", "침실 2개", "침대 2개", "욕실 2개"],
       "guestFavorite": false,
       "rating": "undefined",
       "reviewCount": "0",
@@ -1580,12 +1513,8 @@
       "accommodationId": 20,
       "accommodationName": "느티나무방 *노루목68＊ 비발디, 홍천강 인근 편안한 펜션",
       "locationName": "Bukbang-myeon, Hongcheon-gun, 한국의 펜션의 개인실",
-      "briefRoomInfo": [
-        "최대 인원 8명",
-        "침실 1개",
-        "침대 1개",
-        "욕실 2개"
-      ],
+      "locationAlias": "Bukbang-myeon, Hongcheon-gun",
+      "briefRoomInfo": ["최대 인원 8명", "침실 1개", "침대 1개", "욕실 2개"],
       "guestFavorite": true,
       "rating": "5.00",
       "reviewCount": "10",
@@ -1648,12 +1577,8 @@
       "accommodationId": 21,
       "accommodationName": "pool villa 201/노래방/영화관/실내히노끼탕[60평]",
       "locationName": "인천, 한국의 별장 전체",
-      "briefRoomInfo": [
-        "최대 인원 8명",
-        "침실 2개",
-        "침실 3개",
-        "욕실 3.5개"
-      ],
+      "locationAlias": "인천",
+      "briefRoomInfo": ["최대 인원 8명", "침실 2개", "침실 3개", "욕실 3.5개"],
       "guestFavorite": false,
       "rating": "4.81",
       "reviewCount": "48",
@@ -1735,12 +1660,8 @@
       "accommodationId": 22,
       "accommodationName": "베리더힐 송도 berry the hill /고층/퀸침대/장박환영",
       "locationName": "Songdo-dong, Yeonsu-gu, 한국의 레지던스 전체",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실 1개",
-        "침대 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Songdo-dong, Yeonsu-gu",
+      "briefRoomInfo": ["최대 인원 2명", "침실 1개", "침대 1개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.93",
       "reviewCount": "148",
@@ -1821,10 +1742,8 @@
       "accommodationId": 23,
       "accommodationName": "하버하우스-[여성3인실]우든보트를 제작하는 청년들이 지은 이야기가 있는 집",
       "locationName": "제주시 조천읍, 한국의 방",
-      "briefRoomInfo": [
-        "싱글 침대 3개",
-        "공용 욕실 3개"
-      ],
+      "locationAlias": "제주시 조천읍",
+      "briefRoomInfo": ["싱글 침대 3개", "공용 욕실 3개"],
       "guestFavorite": true,
       "rating": "4.82",
       "reviewCount": "113",
@@ -1915,12 +1834,8 @@
       "accommodationId": 24,
       "accommodationName": "나무사이로 햇살이",
       "locationName": "구좌읍, 제주시, 한국의 집 전체",
-      "briefRoomInfo": [
-        "최대 인원 4명",
-        "침실 2개",
-        "침대 2개",
-        "욕실 1개"
-      ],
+      "locationAlias": "구좌읍, 제주시",
+      "briefRoomInfo": ["최대 인원 4명", "침실 2개", "침대 2개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.95",
       "reviewCount": "211",
@@ -2002,12 +1917,8 @@
       "accommodationId": 25,
       "accommodationName": "클로드에덴 : 트리하우스",
       "locationName": "Jipyeong-myeon, Yangpyeong-gun, 한국의 트리하우스",
-      "briefRoomInfo": [
-        "최대 인원 2명",
-        "침실 1개",
-        "침대 1개",
-        "욕실 1.5개"
-      ],
+      "locationAlias": "Jipyeong-myeon, Yangpyeong-gun",
+      "briefRoomInfo": ["최대 인원 2명", "침실 1개", "침대 1개", "욕실 1.5개"],
       "guestFavorite": true,
       "rating": "4.96",
       "reviewCount": "93",
@@ -2076,12 +1987,8 @@
       "accommodationId": 26,
       "accommodationName": "커플 및 가족을 위한 우아하고 한적한 오두막",
       "locationName": "나가노, 일본의 통나무집 전체",
-      "briefRoomInfo": [
-        "최대 인원 4명",
-        "침실 1개",
-        "침대 3개",
-        "욕실 1개"
-      ],
+      "locationAlias": "나가노",
+      "briefRoomInfo": ["최대 인원 4명", "침실 1개", "침대 3개", "욕실 1개"],
       "guestFavorite": false,
       "rating": "4.92",
       "reviewCount": "370",
@@ -2167,12 +2074,8 @@
       "accommodationId": 27,
       "accommodationName": "노지리 호수의 멋진 전망을 감상할 수 있는 전용 사우나를 갖춘 아노이 주택",
       "locationName": "Shinano, Kamiminochi District, 일본의 초소형 주택",
-      "briefRoomInfo": [
-        "최대 인원 6명",
-        "침실 1개",
-        "침대 5개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Shinano, Kamiminochi District",
+      "briefRoomInfo": ["최대 인원 6명", "침실 1개", "침대 5개", "욕실 1개"],
       "guestFavorite": false,
       "rating": "4.94",
       "reviewCount": "321",
@@ -2249,12 +2152,8 @@
       "accommodationId": 28,
       "accommodationName": "서나와 할아버지 통나무집 - 산님",
       "locationName": "Hwachon-myeon, Hongcheon, 한국의 통나무집 전체",
-      "briefRoomInfo": [
-        "최대 인원 4명",
-        "침실 1개",
-        "침대 1개",
-        "욕실 1.5개"
-      ],
+      "locationAlias": "Hwachon-myeon, Hongcheon",
+      "briefRoomInfo": ["최대 인원 4명", "침실 1개", "침대 1개", "욕실 1.5개"],
       "guestFavorite": true,
       "rating": "4.88",
       "reviewCount": "299",
@@ -2327,12 +2226,8 @@
       "accommodationId": 29,
       "accommodationName": "통나무집 1 - 바툴라오 전망을 감상할 수 있는 산악 럭셔리 오두막",
       "locationName": "Calaca, 필리핀의 통나무집 전체",
-      "briefRoomInfo": [
-        "최대 인원 8명",
-        "침실 2개",
-        "침대 3개",
-        "욕실 2개"
-      ],
+      "locationAlias": "Calaca",
+      "briefRoomInfo": ["최대 인원 8명", "침실 2개", "침대 3개", "욕실 2개"],
       "guestFavorite": true,
       "rating": "4.83",
       "reviewCount": "176",
@@ -2427,12 +2322,8 @@
       "accommodationId": 30,
       "accommodationName": "언덕 위의 통나무집 프로젝트 ph",
       "locationName": "Antipolo, 필리핀의 통나무집 전체",
-      "briefRoomInfo": [
-        "최대 인원 7명",
-        "침실 2개",
-        "침대 2개",
-        "욕실 1.5개"
-      ],
+      "locationAlias": "Antipolo",
+      "briefRoomInfo": ["최대 인원 7명", "침실 2개", "침대 2개", "욕실 1.5개"],
       "guestFavorite": true,
       "rating": "4.86",
       "reviewCount": "78",
@@ -2514,11 +2405,8 @@
       "accommodationId": 31,
       "accommodationName": "바다까지 0초! 무료 바비큐! 바닷가를 즐겨보세요!",
       "locationName": "Onjuku, Isumi District, 일본의 별장 전체",
-      "briefRoomInfo": [
-        "최대 인원 5명",
-        "침실 2개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Onjuku, Isumi District",
+      "briefRoomInfo": ["최대 인원 5명", "침실 2개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.80",
       "reviewCount": "98",
@@ -2596,11 +2484,8 @@
       "accommodationId": 32,
       "accommodationName": "인스타그램에서 10% 할인해드립니다! 北軽井沢전용 빌라 ~ D-place つまごい~",
       "locationName": "大字, Tsumagoi, Agatsuma District, 일본의 집 전체",
-      "briefRoomInfo": [
-        "최대 인원 10명",
-        "침실 3개",
-        "욕실 1개"
-      ],
+      "locationAlias": "大字, Tsumagoi, Agatsuma District",
+      "briefRoomInfo": ["최대 인원 10명", "침실 3개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.41",
       "reviewCount": "29",
@@ -2659,12 +2544,8 @@
       "accommodationId": 33,
       "accommodationName": "강원도 영월에 위치한 통나무집 A",
       "locationName": "Yeongwol-gun, 한국의 통나무집 전체",
-      "briefRoomInfo": [
-        "최대 인원 4명",
-        "원룸",
-        "침대 1개",
-        "욕실 1개"
-      ],
+      "locationAlias": "Yeongwol-gun",
+      "briefRoomInfo": ["최대 인원 4명", "원룸", "침대 1개", "욕실 1개"],
       "guestFavorite": true,
       "rating": "4.96",
       "reviewCount": "746",
@@ -2737,12 +2618,8 @@
       "accommodationId": 34,
       "accommodationName": "힐링과 방갈로, 개울이 있는 자연의 집 - 양평 4계절",
       "locationName": "Gangha-myeon, Yangpyeong, 한국의 통나무집 전체",
-      "briefRoomInfo": [
-        "최대 인원 8명",
-        "침실 3개",
-        "침대 2개",
-        "욕실 2개"
-      ],
+      "locationAlias": "Gangha-myeon, Yangpyeong",
+      "briefRoomInfo": ["최대 인원 8명", "침실 3개", "침대 2개", "욕실 2개"],
       "guestFavorite": true,
       "rating": "4.95",
       "reviewCount": "478",

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {formatPrice} from '@/common/utils'
+import { formatPrice } from '@/common/utils'
 import { AIRBNB_CHARGE_RATIO } from '@/common/env'
 import ReservationCalendarModal from './ReservationCalendarModal'
 import { format } from 'date-fns'
@@ -22,18 +22,17 @@ function ReservationComponent({
   onDateClick,
   clearDates,
   currentMonth,
-  setCurrentMonth
+  setCurrentMonth,
+  locationAlias,
 }) {
   const formattedPrice = formatPrice(pricePerDay)
   const [isReserved, setIsReserved] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const night = calculateNights(checkInDate, checkOutDate)
   const totalPrice = night * pricePerDay
-  
 
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
-
 
   return (
     <div className='w-[373px] h-[500px] relative shadow-lg rounded-xl border border-solid border-gray-300 p-6 bg-white'>
@@ -44,11 +43,15 @@ function ReservationComponent({
       <div className='mt-6 grid grid-cols-2 gap-0 border border-solid border-gray-300 rounded-xl'>
         <div className='p-4 border-r border-solid border-gray-300'>
           <div className='text-gray-800 text-xs'>체크인</div>
-          <div className='text-gray-600 text-sm mt-1 cursor-pointer' onClick={openModal}>{!checkInDate ? '날짜 추가' : format(checkInDate, 'yyyy년 MM월 d일')}</div>
+          <div className='text-gray-600 text-sm mt-1 cursor-pointer' onClick={openModal}>
+            {!checkInDate ? '날짜 추가' : format(checkInDate, 'yyyy년 MM월 d일')}
+          </div>
         </div>
         <div className='p-4 border-solid border-gray-300'>
           <div className='text-gray-800 text-xs'>체크아웃</div>
-          <div className='text-gray-600 text-sm mt-1 cursor-pointer' onClick={openModal}>{!checkOutDate ? '날짜 추가' : format(checkOutDate, 'yyyy년 MM월 d일')}</div>
+          <div className='text-gray-600 text-sm mt-1 cursor-pointer' onClick={openModal}>
+            {!checkOutDate ? '날짜 추가' : format(checkOutDate, 'yyyy년 MM월 d일')}
+          </div>
         </div>
         <div className='col-span-2 p-4 border-t border-solid border-gray-300 rounded-b-xl'>
           <div className='text-gray-800 text-xs'>게스트</div>
@@ -68,15 +71,20 @@ function ReservationComponent({
       </div>
       <div className='mt-6 space-y-3'>
         <FeeInfo feeText={`${formattedPrice} × ${night}박`} fee={totalPrice}></FeeInfo>
-        <FeeInfo feeText='에어비앤비 서비스 수수료' fee={totalPrice * AIRBNB_CHARGE_RATIO}></FeeInfo>
+        <FeeInfo
+          feeText='에어비앤비 서비스 수수료'
+          fee={totalPrice * AIRBNB_CHARGE_RATIO}
+        ></FeeInfo>
       </div>
       <div className='mt-4 border-t border-solid border-gray-200'></div>
       <div className='flex justify-between text-base font-medium mt-3'>
         <div className='text-black-800'>총 합계</div>
-        <div className='text-black-800'>{formatPrice(totalPrice + totalPrice * AIRBNB_CHARGE_RATIO)}</div>
+        <div className='text-black-800'>
+          {formatPrice(totalPrice + totalPrice * AIRBNB_CHARGE_RATIO)}
+        </div>
       </div>
-      <ReservationCalendarModal 
-        isOpen={isModalOpen} 
+      <ReservationCalendarModal
+        isOpen={isModalOpen}
         onRequestClose={closeModal}
         checkInDate={checkInDate}
         checkOutDate={checkOutDate}
@@ -84,6 +92,7 @@ function ReservationComponent({
         clearDates={clearDates}
         currentMonth={currentMonth}
         setCurrentMonth={setCurrentMonth}
+        locationAlias={locationAlias}
       />
     </div>
   )

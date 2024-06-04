@@ -26,11 +26,11 @@ const Search = () => {
 
   const getSectionClass = (section) => {
     if (activeSection === section) {
-      return 'bg-white shadow-lg' // Add shadow to the active section
+      return 'bg-white shadow-lg'
     } else if (activeSection) {
-      return 'hover:bg-gray-300' // Slightly darker hover color for non-active sections
+      return 'hover:bg-searchOnClickHoverBackground'
     } else {
-      return 'hover:bg-gray-200'
+      return 'hover:bg-searchBackground'
     }
   }
 
@@ -46,8 +46,8 @@ const Search = () => {
 
       <div
         ref={searchRef}
-        className={`h-16 flex items-center absolute left-1/2 transform -translate-x-1/2 top-12 rounded-full z-40 ${
-          activeSection ? 'bg-gray-200' : 'bg-white search-shadow'
+        className={`h-16 flex items-center absolute left-1/2 transform -translate-x-1/2 top-12 w-full max-w-4xl rounded-full z-40 ${
+          activeSection ? 'bg-searchBackground' : 'bg-white search-shadow'
         }`}
         role='group'
       >

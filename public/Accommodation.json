@@ -1133,6 +1133,7 @@
           "amenityName": "초고속 와이파이 – 85Mbps",
           "icon": "AmenityWifi"
         },
+
         {
           "amenityName": "업무 전용 공간",
           "icon": "AmenityDesk"

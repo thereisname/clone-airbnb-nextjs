@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation } from 'swiper/modules'
+import Image from 'next/image'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -14,7 +15,6 @@ export default function CardImageBox({ images, fit = 'cover' }) {
     <div>
       <Swiper
         slidesPerView={1}
-        lazy={true}
         pagination={{
           clickable: true,
         }}
@@ -27,14 +27,10 @@ export default function CardImageBox({ images, fit = 'cover' }) {
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={src}
-              loading='lazy'
-              className={`w-full object-${fit}`}
-              alt={`${index + 1}번 이미지 입니다`}
-            />
+            <Image src={src} width={700} height={475} alt={`${index + 1}번 이미지 입니다`} />
           </SwiperSlide>
         ))}
+
         <div className='swiper-button-next-custom swiper-button-custom'></div>
         <div className='swiper-button-prev-custom swiper-button-custom'></div>
       </Swiper>

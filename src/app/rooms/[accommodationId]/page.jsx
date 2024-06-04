@@ -75,14 +75,26 @@ const AccommodationDetailPage = () => {
       <div className='max-w-full xl:w-[1120px] mx-auto'>
         <DetailTitle accommodation={accommodation} />
         <DetailGallery images={accommodation.imageUrl} />
-        <div className='flex flex-wrap my-10'>
+
+        <div className='flex flex-wrap'>
           <div className='flex-1'>
-            <DetailSubTitle accommodation={accommodation} />
-            <DetailFeatures amenities={accommodation.amenities} />
-            <DetailHostInfo hostName={accommodation.hostName} hostSince={accommodation.hostSince} />
+            <div className='mb-8'>
+              <DetailSubTitle accommodation={accommodation} />
+            </div>
+            <hr></hr>
+            <div className='my-8'>
+              <DetailHostInfo
+                hostName={accommodation.hostName}
+                hostSince={accommodation.hostSince}
+              />
+            </div>
+            <hr></hr>
+            <div className='my-8'>
+              <DetailFeatures amenities={accommodation.amenities} />
+            </div>
           </div>
           <div className='flex justify-center md:justify-end w-full md:w-auto'>
-            <ReservationComponent 
+            <ReservationComponent
               pricePerDay={accommodation.pricePerDay}
               checkInDate={checkInDate}
               checkOutDate={checkOutDate}
@@ -90,20 +102,25 @@ const AccommodationDetailPage = () => {
               clearDates={clearDates}
               currentMonth={currentMonth}
               setCurrentMonth={setCurrentMonth}
+              locationAlias={accommodation.locationAlias}
             />
           </div>
         </div>
-        <DetailCalendar 
-          py='py-12'
-          checkInDate={checkInDate}
-          checkOutDate={checkOutDate}
-          onDateClick={onDateClick}
-          clearDates={clearDates}
-          currentMonth={currentMonth}
-          setCurrentMonth={setCurrentMonth}
-        />
+        <div className=''>
+          <DetailCalendar
+            py='py-12'
+            locationAlias={accommodation.locationAlias}
+            checkInDate={checkInDate}
+            checkOutDate={checkOutDate}
+            onDateClick={onDateClick}
+            clearDates={clearDates}
+            currentMonth={currentMonth}
+            setCurrentMonth={setCurrentMonth}
+          />
+        </div>
+
         <hr />
-        <DetailReview reviews={accommodation.reviews} />
+        <DetailReview />
         <hr />
         <DetailAccommodationInfo desc={accommodation.desc} />
       </div>

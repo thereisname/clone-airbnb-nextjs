@@ -12,7 +12,7 @@ const DetailSubTitle = ({ accommodation }) => {
     <div>
       <h2 className='text-lg font-semibold'>{accommodation.locationName}</h2>
       <div>{accommodation.briefRoomInfo.join(', ')}</div>
-      <button onClick={toggleModal} className='text-[16px] underline text-bold mt-4'>
+      <button onClick={toggleModal} className='text-[16px] underline text-bold'>
         후기 {accommodation.reviewCount}개
       </button>
 

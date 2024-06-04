@@ -15,7 +15,7 @@ import {
   isAfter,
   isBefore,
 } from 'date-fns'
-import { ko } from 'date-fns/locale' 
+import { ko } from 'date-fns/locale'
 
 const CalendarLayout = ({
   currentMonth,
@@ -55,7 +55,7 @@ const CalendarLayout = ({
 
   const renderDays = () => {
     const days = []
-    const date = startOfWeek(new Date(), { locale: ko }) 
+    const date = startOfWeek(new Date(), { locale: ko })
 
     for (let i = 0; i < 7; i++) {
       days.push(
@@ -71,7 +71,7 @@ const CalendarLayout = ({
   const renderCells = (month) => {
     const monthStart = startOfMonth(month)
     const monthEnd = endOfMonth(monthStart)
-    const startDate = startOfWeek(monthStart, { locale: ko }) 
+    const startDate = startOfWeek(monthStart, { locale: ko })
     const endDate = endOfWeek(monthEnd, { locale: ko })
     const rows = []
     let days = []
@@ -90,7 +90,7 @@ const CalendarLayout = ({
 
         days.push(
           <div
-            className={`p-2 text-center cursor-pointer ${
+            className={`p-3 text-center cursor-pointer ${
               !isSameMonth(day, monthStart)
                 ? 'text-gray-300'
                 : isSelected
@@ -107,11 +107,7 @@ const CalendarLayout = ({
         )
         day = addDays(day, 1)
       }
-      rows.push(
-        <div className={`grid grid-cols-7 gap-x-5 ${className}`}>
-          {days}
-        </div>,
-      )
+      rows.push(<div className={`grid grid-cols-7  ${className}`}>{days}</div>)
       days = []
     }
     return <div>{rows}</div>

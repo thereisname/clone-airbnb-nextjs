@@ -122,7 +122,7 @@ const AccommodationDetailPage = () => {
         <hr />
         <DetailReview />
         <hr />
-        <DetailAccommodationInfo desc={accommodation.desc} />
+        <DetailAccommodationInfo desc={accommodation.desc} accommodationId={accommodationId} />
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ const Categories = () => {
   }
 
   return (
-    <div>
+    <div className='main-padding-list'>
       <div className='items-center w-full pt-4'>
         <div className='flex w-18 flex-row justify-around'>
           {categories.map((category, index) => (

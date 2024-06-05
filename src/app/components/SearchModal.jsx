@@ -43,8 +43,6 @@ const SearchModal = ({
       case 'checkout':
         return (
           <SearchCalendar
-            setActiveSection={setActiveSection}
-            activeSection={activeSection}
             checkInDate={checkInDate}
             checkOutDate={checkOutDate}
             onDateClick={onDateClick}

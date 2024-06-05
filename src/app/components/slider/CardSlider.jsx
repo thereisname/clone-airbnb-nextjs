@@ -15,6 +15,7 @@ const CardSlider = () => {
         return response.json()
       })
       .then((data) => {
+        console.log('Fetched data:', data)
         setData(data)
       })
       .catch((error) => {
@@ -23,7 +24,7 @@ const CardSlider = () => {
   }, [])
 
   return (
-    <div className='grid relative mt-16 pb-8 max-w-screen-full main-padding-list'>
+    <div className='grid relative mt-8 pb-8 max-w-screen-full main-padding-list'>
       {data ? <Cards accommodationInfo={data.accommodationInfo} /> : <div>Loading...</div>}
     </div>
   )

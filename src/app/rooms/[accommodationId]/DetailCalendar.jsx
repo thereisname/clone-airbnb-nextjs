@@ -1,53 +1,39 @@
 'use client'
-import React, { useState } from 'react'
-import { format, differenceInDays, addMonths, subMonths, isBefore } from 'date-fns'
+import React from 'react'
+import { format, differenceInDays, addMonths } from 'date-fns'
 import Calendar from './CalendarLayout'
+import { calculateNights } from '@/common/utils'
 
-const DetailCalendar = ({ py }) => {
-  const [currentMonth, setCurrentMonth] = useState(new Date())
-  const [checkInDate, setCheckInDate] = useState(null)
-  const [checkOutDate, setCheckOutDate] = useState(null)
-
-  const onDateClick = (day) => {
-    if (!checkInDate || (checkInDate && checkOutDate)) {
-      setCheckInDate(day)
-      setCheckOutDate(null)
-    } else if (isBefore(day, checkInDate)) {
-      setCheckInDate(day)
-    } else {
-      setCheckOutDate(day)
-    }
-  }
-
-  const clearDates = () => {
-    setCheckInDate(null)
-    setCheckOutDate(null)
-  }
-
-  const calculateNights = () => {
-    if (checkInDate && checkOutDate) {
-      return differenceInDays(checkOutDate, checkInDate)
-    }
-    return 0
-  }
-
+const DetailCalendar = ({
+  py,
+  className,
+  checkInDate,
+  checkOutDate,
+  onDateClick,
+  clearDates,
+  currentMonth,
+  setCurrentMonth,
+  locationAlias,
+}) => {
   const nextMonth = addMonths(currentMonth, 1)
 
   return (
-    <div className={`bg-white rounded-lg ${py}`}>
+    <div className={`bg-white rounded-lg ${py} ${className}`}>
       <div className='text-left mb-4'>
-        <h1 className='text-[22px]'>가평군에서 {calculateNights()}박</h1>
+        <h1 className='text-[22px] text-center'>
+          {locationAlias}에서 {calculateNights(checkInDate, checkOutDate)}박
+        </h1>
         {checkInDate && checkOutDate ? (
-          <p className='text-gray-600 text-[14px] pt-2'>
-            {format(checkInDate, 'yyyy년 MMMM d일')} - {format(checkOutDate, 'yyyy년 MMMM d일')}
+          <p className='text-gray-600 text-[14px] pt-2 text-center'>
+            {format(checkInDate, 'yyyy년 MM월 d일')} - {format(checkOutDate, 'yyyy년 MM월 d일')}
           </p>
         ) : (
-          <div className='text-gray-600 text-[14px] pt-2'>
+          <div className='text-gray-600 text-[14px] pt-2 text-center'>
             여행 날짜를 입력하여 정확한 요금을 확인하세요.
           </div>
         )}
       </div>
-      <div className='flex space-x-10'>
+      <div className='flex justify-center space-x-10'>
         <div className='relative pb-10'>
           <Calendar
             currentMonth={currentMonth}

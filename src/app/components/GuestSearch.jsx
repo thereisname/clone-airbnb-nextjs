@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import 'tailwindcss/tailwind.css'
 
 function usePersonSelect(initialValue, onChange, adjustAdultsIfZero) {
   const [person, setPerson] = useState(initialValue)

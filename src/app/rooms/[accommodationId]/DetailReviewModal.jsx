@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const initialReviews = [
   {
@@ -121,6 +120,13 @@ const ReviewModal = ({ onClose }) => {
       }
     }
   }, [isFetching])
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [])
 
   const handleClickOutside = (event) => {
     if (event.target.id === 'modal-overlay') {

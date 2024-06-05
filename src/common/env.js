@@ -1,0 +1,1 @@
+export const AIRBNB_CHARGE_RATIO = 0.1

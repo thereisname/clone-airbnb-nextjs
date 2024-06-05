@@ -4,10 +4,12 @@ import React from 'react'
 import CardImageBox from './CardImageBox'
 import Link from 'next/link'
 import GuestFavorite from './GuestFavorite'
+import GuestFavorite from './GuestFavorite'
 
 export default function Cards({ accommodationInfo }) {
   return (
     <div className='card'>
+      <ul className='card-wrap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-2'>
       <ul className='card-wrap grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-2'>
         {accommodationInfo.map((item) => (
           <li key={item.accommodationId} className='card-item p-2'>

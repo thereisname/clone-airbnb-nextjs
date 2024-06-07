@@ -60,7 +60,9 @@ const SearchModal = ({
   return (
     <div
       ref={modalRef}
-      className={`bg-white rounded-[32px] search-shadow absolute z-50 top-20 ${activeSection === 'guests' ? 'right-0' : 'left-0'}`}
+      className={`bg-white rounded-[32px] search-shadow absolute z-50 top-20 ${
+        activeSection === 'guests' ? 'right-0' : 'left-0'
+      }`}
     >
       {renderContent()}
     </div>

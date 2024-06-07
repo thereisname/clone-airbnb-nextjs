@@ -1,13 +1,13 @@
 'use client'
 
-const CompactSearchBar = ({ onSearchClick }) => {
+const CompactSearchBar = () => {
   return (
     <div
       className={`h-12 flex items-center absolute left-1/3 lg:left-1/2 transform -translate-x-1/2 top-4 w-full max-w-[21rem] rounded-full z-40 bg-white search-shadow`}
       role='group'
     >
       {/* 여행지 검색 */}
-      <div className={`flex items-center pl-2 h-full rounded-full}`} onClick={onSearchClick}>
+      <div className={`flex items-center pl-2 h-full rounded-full}`}>
         <label className='flex flex-col p-4'>
           <span className='text-neutral-800 text-sm font-medium'>어디든지</span>
         </label>

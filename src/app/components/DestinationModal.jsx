@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 
 const locations = [
@@ -35,11 +35,8 @@ const imageItems = [
   },
 ]
 
-const DestinationModal = ({ setDestination, setActiveSection }) => {
-  const [selectedLocation, setSelectedLocation] = useState(null)
-
+const DestinationModal = ({ setSelectedLocation, selectedLocation, setActiveSection }) => {
   const handleClick = (location) => {
-    setDestination(location)
     setSelectedLocation(location)
     setActiveSection('checkin')
   }

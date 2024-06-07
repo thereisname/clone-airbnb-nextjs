@@ -7,7 +7,7 @@ const Search = () => {
   const [checkInDate, setCheckInDate] = useState(null)
   const [checkOutDate, setCheckOutDate] = useState(null)
   const [activeSection, setActiveSection] = useState(null)
-  const [destination, setDestination] = useState(null)
+  const [selectedLocation, setSelectedLocation] = useState(null) // 상태 유지
   const [guests, setGuests] = useState({
     adults: 0,
     kids: 0,
@@ -102,8 +102,9 @@ const Search = () => {
           <label className='flex flex-col' role='group'>
             <span className='text-neutral-800 text-xs'>여행지</span>
             <input
-              className='text-neutral-500 text-sm bg-transparent'
-              placeholder={`${destination ?? '여행지 검색'}`}
+              className={` text-sm bg-transparent ${selectedLocation ? 'placeholder-black' : 'placeholder-gray-500'}`}
+              placeholder={`${selectedLocation ?? '여행지 검색'}`}
+              readOnly
             />
           </label>
         </div>
@@ -158,7 +159,8 @@ const Search = () => {
           <SearchModal
             closeModal={() => setActiveSection(null)}
             activeSection={activeSection}
-            setDestination={setDestination}
+            setSelectedLocation={setSelectedLocation} // 상태 전달
+            selectedLocation={selectedLocation} // 상태 전달
             setActiveSection={setActiveSection}
             checkInDate={checkInDate}
             checkOutDate={checkOutDate}

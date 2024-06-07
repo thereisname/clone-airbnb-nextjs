@@ -6,7 +6,7 @@ import GuestSearch from '@/app/components/GuestSearch'
 const SearchModal = ({
   closeModal,
   activeSection,
-  setTravel,
+  setDestination,
   setActiveSection,
   checkInDate,
   checkOutDate,
@@ -38,7 +38,9 @@ const SearchModal = ({
   const renderContent = () => {
     switch (activeSection) {
       case 'destination':
-        return <DestinationModal setTravel={setTravel} setActiveSection={setActiveSection} />
+        return (
+          <DestinationModal setDestination={setDestination} setActiveSection={setActiveSection} />
+        )
       case 'checkin':
       case 'checkout':
         return (

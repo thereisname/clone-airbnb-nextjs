@@ -7,7 +7,7 @@ const Search = () => {
   const [checkInDate, setCheckInDate] = useState(null)
   const [checkOutDate, setCheckOutDate] = useState(null)
   const [activeSection, setActiveSection] = useState(null)
-  const [travel, setTravel] = useState(null)
+  const [destination, setDestination] = useState(null)
   const [guests, setGuests] = useState({
     adults: 0,
     kids: 0,
@@ -103,7 +103,7 @@ const Search = () => {
             <span className='text-neutral-800 text-xs'>여행지</span>
             <input
               className='text-neutral-500 text-sm bg-transparent'
-              placeholder={`${travel ?? '여행지 검색'}`}
+              placeholder={`${destination ?? '여행지 검색'}`}
             />
           </label>
         </div>
@@ -156,7 +156,7 @@ const Search = () => {
           <SearchModal
             closeModal={() => setActiveSection(null)}
             activeSection={activeSection}
-            setTravel={setTravel}
+            setDestination={setDestination}
             setActiveSection={setActiveSection}
             checkInDate={checkInDate}
             checkOutDate={checkOutDate}

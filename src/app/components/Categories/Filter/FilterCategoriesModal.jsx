@@ -10,10 +10,12 @@ function FilterCategoriesModal({ isOpen, onClose }) {
 
   return (
     <div
-      className={`fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-30 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      className={`fixed inset-0 py-12 flex justify-center items-center bg-black bg-opacity-50 z-30 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      onClick={onClose}
     >
       <div
         className={`bg-white py-5 px-5 my-12 rounded-lg w-full max-w-3xl max-h-full overflow-y-auto transform transition-transform duration-300 ${isOpen ? 'scale-100' : 'scale-95'}`}
+        onClick={(e) => e.stopPropagation()} // 모달 내부 클릭 시 닫히지 않도록 이벤트 전파 방지
       >
         <header className='text-md font-bold pb-6 mb-4 flex items-center justify-between top-0 bg-white z-10 border-b border-black'>
           <button onClick={onClose} className='text-3xl font-light'>

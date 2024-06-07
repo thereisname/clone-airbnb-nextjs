@@ -1,13 +1,13 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import Cards from './Cards'
+import CardUI from './CardUI'
 
-const CardSlider = () => {
+const CardGrid = () => {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    fetch('/Accommodation.json')
+    fetch('./Accommodation.json')
       .then((response) => {
         if (!response.ok) {
           throw new Error('네트워크 응답 없음')
@@ -23,11 +23,19 @@ const CardSlider = () => {
       })
   }, [])
 
+  if (!data) {
+    return <div>Loading...</div>
+  }
+
   return (
-    <div className='grid relative mt-8 pb-8 max-w-screen-full'>
-      {data ? <Cards accommodationInfo={data.accommodationInfo} /> : <div>Loading...</div>}
+    <div className='card'>
+      <ul className='card-wrap grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 px-10'>
+        {data.accommodationInfo.map((item) => (
+          <CardUI key={item.accommodationId} item={item} />
+        ))}
+      </ul>
     </div>
   )
 }
 
-export default CardSlider
+export default CardGrid

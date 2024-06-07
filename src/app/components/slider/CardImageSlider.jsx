@@ -8,9 +8,9 @@ import Image from 'next/image'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import '../../styles/CardImageBox.css' // 추가된 CSS 파일 import
+import '../../styles/CardImageSlider.css' // 추가된 CSS 파일 import
 
-export default function CardImageBox({ images, fit = 'cover' }) {
+export default function CardImageSlider({ images, fit = 'cover' }) {
   return (
     <div>
       <Swiper

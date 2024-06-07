@@ -4,6 +4,7 @@ import React from 'react'
 import CardImageBox from './CardImageBox'
 import Link from 'next/link'
 import GuestFavorite from './GuestFavorite'
+import HeartFavorite from './HeartFavorite'
 
 export default function Cards({ accommodationInfo }) {
   return (
@@ -19,6 +20,7 @@ export default function Cards({ accommodationInfo }) {
                     <GuestFavorite />
                   </div>
                 )}
+                <HeartFavorite />
                 <div className='flex justify-between'>
                   <div className='txt mt-2 text-black'>
                     <h3 className='title font-semibold'>

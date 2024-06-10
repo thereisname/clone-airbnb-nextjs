@@ -18,9 +18,13 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "public/*": ["./public/*"]
+      // public 절대경로 설정 추가
     },
-    "checkJs": true
+
+    "checkJs": true,
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",

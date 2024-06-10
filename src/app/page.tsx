@@ -1,5 +1,5 @@
 import Categories from './components/Categories/Categories'
-import CardSlider from './components/slider/CardSlider'
+import CardGrid from './components/slider/CardGrid'
 
 export default function Home() {
   // (1) FIXME : Root Page.tsx에 Category와 Grid 들어가야 함
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <Categories />
-      <CardSlider />
+      <CardGrid />
     </div>
   )
 }

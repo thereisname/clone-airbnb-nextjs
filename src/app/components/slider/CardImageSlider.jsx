@@ -3,13 +3,14 @@
 import { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation } from 'swiper/modules'
+import Image from 'next/image'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import '../../styles/CardImageBox.css' // 추가된 CSS 파일 import
+import '../../styles/CardImageSlider.css' // 추가된 CSS 파일 import
 
-export default function CardImageBox({ images, fit = 'cover' }) {
+export default function CardImageSlider({ images, fit = 'cover' }) {
   return (
     <div>
       <Swiper
@@ -26,12 +27,7 @@ export default function CardImageBox({ images, fit = 'cover' }) {
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={src}
-              loading='lazy'
-              className={`w-full object-${fit}`}
-              alt={`${index + 1}번 이미지 입니다`}
-            />
+            <Image src={src} width={700} height={475} alt={`${index + 1}번 이미지 입니다`} />
           </SwiperSlide>
         ))}
 

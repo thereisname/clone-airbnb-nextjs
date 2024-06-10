@@ -2,15 +2,13 @@
 import { useState, useEffect } from 'react'
 import FilterCategories from './Filter/FilterCategories'
 
-import '../../styles/Categories.css' // 추가된 CSS 파일 import
-
 const Categories = () => {
   const [categories, setCategories] = useState([])
   const [clicked, setClicked] = useState(null)
 
   useEffect(() => {
     // JSON 데이터 fetch
-    fetch('/categories.json') // 경로를 절대 경로로 설정
+    fetch('/categories.json')
       .then((response) => response.json())
       .then((data) => setCategories(data.desc))
       .catch((error) => console.error('Error fetching data:', error))

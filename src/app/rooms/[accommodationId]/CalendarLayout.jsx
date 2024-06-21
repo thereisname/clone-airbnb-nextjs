@@ -15,7 +15,7 @@ import {
   isAfter,
   isBefore,
 } from 'date-fns'
-import { ko } from 'date-fns/locale' // 한글 로케일을 불러옵니다.
+import { ko } from 'date-fns/locale'
 
 const CalendarLayout = ({
   currentMonth,
@@ -54,7 +54,7 @@ const CalendarLayout = ({
 
   const renderDays = () => {
     const days = []
-    const date = startOfWeek(new Date(), { locale: ko }) // 한글 로케일을 설정합니다.
+    const date = startOfWeek(new Date(), { locale: ko })
 
     for (let i = 0; i < 7; i++) {
       days.push(
@@ -70,8 +70,8 @@ const CalendarLayout = ({
   const renderCells = (month) => {
     const monthStart = startOfMonth(month)
     const monthEnd = endOfMonth(monthStart)
-    const startDate = startOfWeek(monthStart, { locale: ko }) // 한글 로케일을 설정합니다.
-    const endDate = endOfWeek(monthEnd, { locale: ko }) // 한글 로케일을 설정합니다.
+    const startDate = startOfWeek(monthStart, { locale: ko })
+    const endDate = endOfWeek(monthEnd, { locale: ko })
     const rows = []
     let days = []
     let day = startDate
@@ -89,7 +89,7 @@ const CalendarLayout = ({
 
         days.push(
           <div
-            className={`p-2 text-center cursor-pointer ${
+            className={`p-3 text-center cursor-pointer ${
               !isSameMonth(day, monthStart)
                 ? 'text-gray-300'
                 : isSelected
@@ -106,18 +106,14 @@ const CalendarLayout = ({
         )
         day = addDays(day, 1)
       }
-      rows.push(
-        <div className='grid grid-cols-7 gap-x-5' key={day}>
-          {days}
-        </div>,
-      )
+      rows.push(<div className={`grid grid-cols-7`}>{days}</div>)
       days = []
     }
     return <div>{rows}</div>
   }
 
   return (
-    <div className='flex space-x-20'>
+    <div className={`flex space-x-20`}>
       <div>
         {renderHeader(currentMonth, false)}
         {renderDays()}

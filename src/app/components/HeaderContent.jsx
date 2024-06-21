@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import HeaderContentModal from '@/app/components/HeaderContentModal' // 적절한 경로로 수정하세요
 import LoginModal from '@/app/components/LoginModal' // 새로운 LoginModal 컴포넌트의 경로를 수정하세요
+import Image from 'next/image'
+import Link from 'next/link'
 
 const HeaderContent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -23,22 +25,22 @@ const HeaderContent = () => {
 
   return (
     <div className='flex justify-between items-center w-full'>
-      <div>
-        <img src='/assets/airbnbLogo.svg' alt='에어비앤비 로고입니다.' />
-      </div>
+      <Link href={'/'}>
+        <Image width={100} height={100} src='/assets/airbnbLogo.svg' alt='에어비앤비 로고입니다.' />
+      </Link>
 
       <div className='flex justify-end items-center gap-6 relative'>
         <div className='text-neutral-800 text-sm'>당신의 공간을 에어비앤비하세요</div>
         <button className='relative'>
-          <img src='/assets/language.svg' alt='언어 선택' />
+          <Image width={25} height={25} src='/assets/language.svg' alt='언어 선택' />
         </button>
         <div className='relative'>
           <button
             className='py-1 px-2 bg-white rounded-[29px] border border-gray-300 flex items-center min-w-[85px]'
             onClick={handleModalToggle}
           >
-            <img src='/assets/menu.svg' alt='메뉴' className='mr-4' />
-            <img src='/assets/account.svg' alt='계정' />
+            <Image width={30} height={30} src='/assets/menu.svg' alt='메뉴' className='mr-4' />
+            <Image width={30} height={30} src='/assets/account.svg' alt='계정' />
           </button>
 
           <HeaderContentModal

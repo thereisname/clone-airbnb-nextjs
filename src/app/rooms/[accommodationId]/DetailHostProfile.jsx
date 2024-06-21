@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const DetailHostProfile = ({ host }) => {
@@ -9,7 +10,13 @@ const DetailHostProfile = ({ host }) => {
       <h2 className='text-2xl font-semibold mb-4'>호스트 소개</h2>
       <div className='flex space-x-4'>
         <div className='flex-1 p-4 border border-gray-300 rounded-lg'>
-          <img src={profileImage} alt={name} className='w-24 h-24 rounded-full mb-4' />
+          <Image
+            width={100}
+            height={100}
+            src={profileImage}
+            alt={name}
+            className='w-24 h-24 rounded-full mb-4'
+          />
           <h3 className='text-xl font-bold'>{name}</h3>
           {isSuperHost ? (
             <p className='text-sm text-gray-500'>슈퍼호스트</p>

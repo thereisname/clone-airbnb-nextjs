@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React, { useState } from 'react'
 const facebookIcon = '/assets/facebook.svg'
 const twitterIcon = '/assets/twitter.svg'
@@ -82,6 +83,8 @@ const tabs = [
 function FooterComponent() {
   const [activeTab, setActiveTab] = useState('popular')
 
+  const activeTabItems = tabs.find((tab) => tab.key === activeTab)?.items || []
+
   return (
     <footer className='bg-gray-100 main-padding-list'>
       <div className='container py-10 '>
@@ -99,16 +102,14 @@ function FooterComponent() {
             ))}
           </div>
           <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
-            {tabs
-              .find((tab) => tab.key === activeTab)
-              .items.map((item, index) => (
-                <div key={index} className='flex flex-col'>
-                  <a href='#' className='text-black font-bold'>
-                    {item.place}
-                  </a>
-                  <span className='text-gray-600'>{item.description}</span>
-                </div>
-              ))}
+            {activeTabItems.map((item, index) => (
+              <div key={index} className='flex flex-col'>
+                <a href='#' className='text-black font-bold'>
+                  {item.place}
+                </a>
+                <span className='text-gray-600'>{item.description}</span>
+              </div>
+            ))}
           </div>
           <div className='text-right mt-4'>
             <button className='text-gray-600 hover:text-black'>더 보기</button>
@@ -203,16 +204,34 @@ function FooterComponent() {
               </p>
               <div className='flex space-x-4 mt-4 md:mt-0'>
                 <a href='#'>
-                  <img src={facebookIcon} alt='Facebook' className='h-6' />
+                  <Image
+                    width={100}
+                    height={100}
+                    src={facebookIcon}
+                    alt='Facebook'
+                    className='h-6'
+                  />
                 </a>
                 <a href='#'>
-                  <img src={twitterIcon} alt='Twitter' className='h-6' />
+                  <Image width={100} height={100} src={twitterIcon} alt='Twitter' className='h-6' />
                 </a>
                 <a href='#'>
-                  <img src={instagramIcon} alt='Instagram' className='h-6' />
+                  <Image
+                    width={100}
+                    height={100}
+                    src={instagramIcon}
+                    alt='Instagram'
+                    className='h-6'
+                  />
                 </a>
                 <a href='#'>
-                  <img src={linkedinIcon} alt='LinkedIn' className='h-6' />
+                  <Image
+                    width={100}
+                    height={100}
+                    src={linkedinIcon}
+                    alt='LinkedIn'
+                    className='h-6'
+                  />
                 </a>
               </div>
             </div>

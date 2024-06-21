@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { useState } from 'react'
 import React from 'react'
 
@@ -120,7 +121,9 @@ const DetailReview = () => {
         {reviews.map((review) => (
           <div key={review.id} className='border-b border-gray-300 pb-8'>
             <div className='flex items-center space-x-4'>
-              <img
+              <Image
+                width={100}
+                height={100}
                 src={review.profileImage || `https://i.pravatar.cc/50?img=${review.id}`}
                 alt={review.name}
                 className='w-12 h-12 rounded-full'

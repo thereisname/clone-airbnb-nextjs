@@ -1,6 +1,7 @@
+import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
-const DetailAccommodationInfo = ({ accommodationId }) => {
+const DetailAccommodationInfo = ({ desc, accommodationId }) => {
   const [accommodation, setAccommodation] = useState(null)
 
   useEffect(() => {
@@ -36,7 +37,9 @@ const DetailAccommodationInfo = ({ accommodationId }) => {
         <div className='grid grid-cols-2 gap-4'>
           {amenities.map((amenity, index) => (
             <div key={index} className='flex items-center'>
-              <img
+              <Image
+                width={20}
+                height={20}
                 className='mr-2'
                 src={`/assets/amenitiesIcons/${amenity.icon}.svg`}
                 alt={amenity.amenityName}

@@ -16,7 +16,7 @@ const DetailSubTitle = ({ accommodation }) => {
         후기 {accommodation.reviewCount}개
       </button>
 
-      {isModalOpen && <DetailReviewModal onClose={toggleModal} />}
+      {/* {isModalOpen && <DetailReviewModal onClose={toggleModal} />} */}
     </div>
   )
 }

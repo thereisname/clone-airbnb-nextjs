@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import FilterCategories from './Filter/FilterCategories'
+import Image from 'next/image'
 
 const Categories = () => {
   const [categories, setCategories] = useState([])
@@ -28,7 +29,13 @@ const Categories = () => {
               className={`flex flex-col items-center cursor-pointer transform transition-all duration-100 ease-in-out hover:scale-110 active:scale-90 ${clicked === index ? 'text-black' : 'text-gray-400'}`}
               onClick={() => handleClick(index)}
             >
-              <img src={category.img} alt={category.imgname} className='size-10' />
+              <Image
+                width={100}
+                height={100}
+                src={category.img}
+                alt={category.imgname}
+                className='size-10'
+              />
               <p className='text-[12px] font-semibold border-b-8'>{category.imgname}</p>
             </div>
           ))}

@@ -2,11 +2,12 @@
 import { useState, useEffect, useRef } from 'react'
 import SearchModal from '@/app/components/SearchModal'
 import { format, isBefore } from 'date-fns'
+import Image from 'next/image'
 
 const Search = () => {
   const [checkInDate, setCheckInDate] = useState(null)
   const [checkOutDate, setCheckOutDate] = useState(null)
-  const [activeSection, setActiveSection] = useState(null)
+  const [activeSection, setActiveSection] = useState('')
   const [travel, setTravel] = useState(null)
   const [guests, setGuests] = useState({
     adults: 0,
@@ -166,7 +167,7 @@ const Search = () => {
         )}
 
         <button className='absolute right-3 w-12 h-12'>
-          <img src='/assets/Group2.svg' alt='검색 버튼' />
+          <Image width={100} height={100} src='/assets/Group2.svg' alt='검색 버튼' />
         </button>
       </div>
     </div>

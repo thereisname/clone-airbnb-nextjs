@@ -56,7 +56,6 @@ const ReservationCalendarModal = ({
         </button>
         <DetailCalendar
           py='py-6'
-          className='modal-calendar'
           checkInDate={checkInDate}
           checkOutDate={checkOutDate}
           onDateClick={onDateClick}

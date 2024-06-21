@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useCallback } from 'react'
 import DestinationModal from '@/app/components/DestinationModal'
 import SearchCalendar from '@/app/components/SearchCalendar'
 import GuestSearch from '@/app/components/GuestSearch'
@@ -15,15 +15,18 @@ const SearchModal = ({
 }) => {
   const modalRef = useRef(null)
 
-  const handleClickOutside = (event) => {
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
-      closeModal()
-    }
-  }
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal()
+      }
+    },
+    [closeModal],
+  )
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     closeModal()
-  }
+  }, [closeModal])
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
@@ -33,7 +36,7 @@ const SearchModal = ({
       document.removeEventListener('mousedown', handleClickOutside)
       document.removeEventListener('scroll', handleScroll, true)
     }
-  }, [])
+  }, [handleClickOutside, handleScroll])
 
   const renderContent = () => {
     switch (activeSection) {

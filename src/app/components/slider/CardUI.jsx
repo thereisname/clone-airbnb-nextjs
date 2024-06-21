@@ -5,6 +5,7 @@ import CardImageSlider from './CardImageSlider'
 import GuestFavorite from './GuestFavorite'
 import HeartFavorite from './HeartFavorite'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const CardUI = ({ item }) => (
   <li className='card-item p-2 w-full'>
@@ -45,7 +46,13 @@ const CardUI = ({ item }) => (
         </span>
       </div>
       <div className='p-2 flex justify-between font-medium'>
-        <img src='/assets/star1.svg' alt='star icon' className='w-4 h-6 pr-1' />
+        <Image
+          width={100}
+          height={100}
+          src='/assets/star1.svg'
+          alt='star icon'
+          className='w-4 h-6 pr-1'
+        />
         {item.rating}
       </div>
     </div>

@@ -1,3 +1,20 @@
 {
-  "extends": ["plugin:prettier/recommended", "next/core-web-vitals"]
+  "rules": {
+    "react/prop-types": "off",
+    // "no-unused-vars": "warn", // 사용하지 않는 변수를 경고로 설정
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "extends": ["next/core-web-vitals"],
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.js"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/ban-types": "off"
+      }
+    }
+  ]
 }

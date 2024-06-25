@@ -6,7 +6,6 @@ import { calculateNights } from '@/common/utils'
 
 const DetailCalendar = ({
   py,
-  className,
   checkInDate,
   checkOutDate,
   onDateClick,
@@ -18,7 +17,7 @@ const DetailCalendar = ({
   const nextMonth = addMonths(currentMonth, 1)
 
   return (
-    <div className={`bg-white rounded-lg ${py} ${className}`}>
+    <div className={`bg-white rounded-lg ${py}`}>
       <div className='text-left mb-4'>
         <h1 className='text-[22px] text-center'>
           {locationAlias}에서 {calculateNights(checkInDate, checkOutDate)}박

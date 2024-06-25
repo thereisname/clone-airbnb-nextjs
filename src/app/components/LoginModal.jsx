@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const LoginModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null
 
@@ -39,23 +41,53 @@ const LoginModal = ({ isOpen, onClose }) => {
           <hr className='flex-grow border-gray-300' />
         </div>
         <button className='flex items-center border border-gray-300 py-2 px-4 rounded mb-2 w-full'>
-          <img src='/assets/login/NaverLogin.svg' alt='네이버' className='w-6 h-6 mr-2' />
+          <Image
+            width={100}
+            height={100}
+            src='/assets/login/NaverLogin.svg'
+            alt='네이버'
+            className='w-6 h-6 mr-2'
+          />
           <span className='text-center w-full'>네이버로 로그인하기</span>
         </button>
         <button className='flex items-center border border-gray-300 py-2 px-4 rounded mb-2 w-full'>
-          <img src='/assets/login/FacebookLogin.svg' alt='페이스북' className='w-6 h-6 mr-2' />
+          <Image
+            width={100}
+            height={100}
+            src='/assets/login/FacebookLogin.svg'
+            alt='페이스북'
+            className='w-6 h-6 mr-2'
+          />
           <span className='text-center w-full'>페이스북으로 로그인하기</span>
         </button>
         <button className='flex items-center border border-gray-300 py-2 px-4 rounded mb-2 w-full'>
-          <img src='/assets/login/GoogleLogin.svg' alt='구글' className='w-6 h-6 mr-2' />
+          <Image
+            width={100}
+            height={100}
+            src='/assets/login/GoogleLogin.svg'
+            alt='구글'
+            className='w-6 h-6 mr-2'
+          />
           <span className='text-center w-full'>구글로 로그인하기</span>
         </button>
         <button className='flex items-center border border-gray-300 py-2 px-4 rounded mb-2 w-full'>
-          <img src='/assets/login/AppleLogin.svg' alt='애플' className='w-6 h-6 mr-2' />
+          <Image
+            width={100}
+            height={100}
+            src='/assets/login/AppleLogin.svg'
+            alt='애플'
+            className='w-6 h-6 mr-2'
+          />
           <span className='text-center w-full'>애플로 로그인하기</span>
         </button>
         <button className='flex items-center border border-gray-300 py-2 px-4 rounded w-full'>
-          <img src='/assets/login/EmailLogin.svg' alt='이메일' className='w-6 h-6 mr-2' />
+          <Image
+            width={100}
+            height={100}
+            src='/assets/login/EmailLogin.svg'
+            alt='이메일'
+            className='w-6 h-6 mr-2'
+          />
           <span className='text-center w-full'>이메일로 로그인하기</span>
         </button>
       </div>

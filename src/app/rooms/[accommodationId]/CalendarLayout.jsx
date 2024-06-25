@@ -23,7 +23,6 @@ const CalendarLayout = ({
   onDateClick,
   selectedDates,
   setCurrentMonth,
-  className,
 }) => {
   const { checkInDate, checkOutDate } = selectedDates
 
@@ -107,14 +106,14 @@ const CalendarLayout = ({
         )
         day = addDays(day, 1)
       }
-      rows.push(<div className={`grid grid-cols-7  ${className}`}>{days}</div>)
+      rows.push(<div className={`grid grid-cols-7`}>{days}</div>)
       days = []
     }
     return <div>{rows}</div>
   }
 
   return (
-    <div className={`flex space-x-20 ${className}`}>
+    <div className={`flex space-x-20`}>
       <div>
         {renderHeader(currentMonth, false)}
         {renderDays()}

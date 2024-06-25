@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 const safePurchasingSvg = '/assets/safepurchasing.svg'
 /* 
@@ -9,7 +10,13 @@ function HostProfile({ imgSrc, name, description, reviews, rating, experience })
   return (
     <>
       <div className='flex flex-col items-center'>
-        <img src={imgSrc} alt='Host' className='w-32 h-32 object-cover rounded-full mb-4' />
+        <Image
+          width={100}
+          height={100}
+          src={imgSrc}
+          alt='Host'
+          className='w-32 h-32 object-cover rounded-full mb-4'
+        />
         <h2 className='font-bold text-2xl mb-1'>{name}</h2>
         <p className='text-sm text-gray-600'>{description}</p>
       </div>
@@ -45,7 +52,13 @@ function SafePaymentNotice() {
 
   return (
     <div className='mt-4 flex items-center'>
-      <img src={safePurchasingSvg} alt='Safe Purchasing' className='pr-3' />
+      <Image
+        width={100}
+        height={100}
+        src={safePurchasingSvg}
+        alt='Safe Purchasing'
+        className='pr-3'
+      />
       <p className='text-xs'>
         안전한 결제를 위해 에어비앤비 웹사이트나 앱 외부에서 송금하거나 대화를 나누지 마세요.
       </p>
@@ -75,7 +88,6 @@ function SuperHostDetail({ responseRate, responseTime, name }) {
     </>
   )
 }
-
 
 function HostSection() {
   // TODO : 거주지에 address 넣는 부분, 더보기 버튼

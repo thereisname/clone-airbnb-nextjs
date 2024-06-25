@@ -4,6 +4,7 @@ import React from 'react'
 import CardImageBox from './CardImageBox'
 import Link from 'next/link'
 import GuestFavorite from './GuestFavorite'
+import Image from 'next/image'
 
 export default function Cards({ accommodationInfo }) {
   return (
@@ -38,7 +39,13 @@ export default function Cards({ accommodationInfo }) {
                     </span>
                   </div>
                   <div className='p-2 flex justify-between font-medium'>
-                    <img src='/assets/star1.svg' alt='star icon' className='w-4 h-6 pr-1' />
+                    <Image
+                      width={100}
+                      height={100}
+                      src='/assets/star1.svg'
+                      alt='star icon'
+                      className='w-4 h-6 pr-1'
+                    />
                     {item.rating}
                   </div>
                 </div>

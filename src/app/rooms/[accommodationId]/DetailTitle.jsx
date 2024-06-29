@@ -1,9 +1,9 @@
 import React from 'react'
 
-const DetailTitle = ({ accommodation }) => {
+const DetailTitle = ({ accommodationName }) => {
   return (
     <div>
-      <h1 className='text-[26px] font-semi bold text-left'>{accommodation.accommodationName}</h1>
+      <h1 className='text-[26px] font-semi bold text-left'>{accommodationName}</h1>
     </div>
   )
 }

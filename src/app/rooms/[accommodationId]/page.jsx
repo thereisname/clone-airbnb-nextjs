@@ -11,21 +11,15 @@ import DetailReview from './DetailReview'
 import DetailCalendar from './DetailCalendar'
 import DetailAccommodationInfo from './DetailAccommodation'
 import ReservationComponent from './ReservationComponent'
+import { fetchAccommodations } from '@/lib/fetchAccommodations'
 
-const fetchAccommodation = async (accommodationId) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/accommodations/${accommodationId}`,
-  )
-  if (!res.ok) {
-    throw new Error('Failed to fetch accommodation data')
-  }
-  return res.json()
-}
+//refactor : fetchAccommodations -> fetch한 후에 map으로 뿌려주기
 
 const AccommodationDetailPage = () => {
-  // @ts-ignore
   const { accommodationId } = useParams()
-  const [accommodation, setAccommodation] = useState(null)
+  const [accommodationName, setAccommodationName] = useState('')
+  const [locationName, setLocationName] = useState('')
+  const [reviewCount, setReviewCount] = useState(0)
   const [error, setError] = useState(null)
   const [checkInDate, setCheckInDate] = useState(null)
   const [checkOutDate, setCheckOutDate] = useState(null)
@@ -34,8 +28,10 @@ const AccommodationDetailPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchAccommodation(accommodationId)
-        setAccommodation(data)
+        const data = await fetchAccommodations(accommodationId)
+        setAccommodationName(data.accommodationName)
+        setLocationName(data.locationName)
+        setReviewCount(data.reviewCount)
       } catch (err) {
         setError(err.message)
       }
@@ -66,36 +62,36 @@ const AccommodationDetailPage = () => {
     return <div>{error}</div>
   }
 
-  if (!accommodation) {
-    return <div>Loading...</div>
-  }
+  // if (!accommodationName) {
+  //   return <div>Loading...</div>
+  // }
 
   return (
     <div className='main-padding-detail'>
       <div className='max-w-full xl:w-[1120px] mx-auto'>
-        <DetailTitle accommodation={accommodation} />
-        <DetailGallery images={accommodation.imageUrl} />
+        <DetailTitle accommodationName={accommodationName} />
+        {/* <DetailGallery images={accommodation.imageUrl} /> */}
 
         <div className='flex flex-wrap'>
           <div className='flex-1'>
             <div className='mb-8'>
-              <DetailSubTitle accommodation={accommodation} />
+              <DetailSubTitle locationName={locationName} reviewCount={reviewCount} />
             </div>
             <hr></hr>
-            <div className='my-8'>
+            {/* <div className='my-8'>
               <DetailHostInfo
                 hostName={accommodation.hostName}
                 hostSince={accommodation.hostSince}
               />
-            </div>
+            </div> */}
             <hr></hr>
-            <div className='my-8'>
+            {/* <div className='my-8'>
               <DetailFeatures amenities={accommodation.amenities} />
-            </div>
+            </div> */}
           </div>
-          <div className='flex justify-center md:justify-end w-full md:w-auto'>
+          {/* <div className='flex justify-center md:justify-end w-full md:w-auto'>
             <ReservationComponent
-              pricePerDay={accommodation.pricePerDay}
+              pricePerDay={accommodationPrice}
               checkInDate={checkInDate}
               checkOutDate={checkOutDate}
               onDateClick={onDateClick}
@@ -104,10 +100,10 @@ const AccommodationDetailPage = () => {
               setCurrentMonth={setCurrentMonth}
               locationAlias={accommodation.locationAlias}
             />
-          </div>
+          </div> */}
         </div>
         <div className=''>
-          <DetailCalendar
+          {/* <DetailCalendar
             py='py-12'
             locationAlias={accommodation.locationAlias}
             checkInDate={checkInDate}
@@ -116,13 +112,13 @@ const AccommodationDetailPage = () => {
             clearDates={clearDates}
             currentMonth={currentMonth}
             setCurrentMonth={setCurrentMonth}
-          />
+          /> */}
         </div>
 
         <hr />
         <DetailReview />
         <hr />
-        <DetailAccommodationInfo desc={accommodation.desc} accommodationId={accommodationId} />
+        {/* <DetailAccommodationInfo desc={accommodation.desc} accommodationId={accommodationId} /> */}
       </div>
     </div>
   )

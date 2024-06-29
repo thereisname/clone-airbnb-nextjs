@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DetailReviewModal from '@/app/rooms/[accommodationId]/DetailReviewModal'
 
-const DetailSubTitle = ({ accommodation }) => {
+const DetailSubTitle = ({ locationName, reviewCount }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const toggleModal = () => {
@@ -10,10 +10,9 @@ const DetailSubTitle = ({ accommodation }) => {
 
   return (
     <div>
-      <h2 className='text-lg font-semibold'>{accommodation.locationName}</h2>
-      <div>{accommodation.briefRoomInfo.join(', ')}</div>
+      <h2 className='text-lg font-semibold'>{locationName}</h2>
       <button onClick={toggleModal} className='text-[16px] underline text-bold'>
-        후기 {accommodation.reviewCount}개
+        후기 {reviewCount}개
       </button>
 
       {/* {isModalOpen && <DetailReviewModal onClose={toggleModal} />} */}

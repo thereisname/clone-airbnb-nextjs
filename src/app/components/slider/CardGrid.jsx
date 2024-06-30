@@ -7,7 +7,6 @@ import { fetchAccommodation } from '@/lib/fetchAccommodations'
 const CardGrid = () => {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
-  console.log(`${process.env.NEXT_PUBLIC_API_BASE_URL}`)
   useEffect(() => {
     const fetchData = async () => {
       try {

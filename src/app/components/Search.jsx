@@ -7,13 +7,8 @@ import Image from 'next/image'
 const Search = () => {
   const [checkInDate, setCheckInDate] = useState(null)
   const [checkOutDate, setCheckOutDate] = useState(null)
-<<<<<<< HEAD
   const [activeSection, setActiveSection] = useState(null)
   const [selectedLocation, setSelectedLocation] = useState(null) // 상태 유지
-=======
-  const [activeSection, setActiveSection] = useState('')
-  const [travel, setTravel] = useState(null)
->>>>>>> origin/develop
   const [guests, setGuests] = useState({
     adults: 0,
     kids: 0,

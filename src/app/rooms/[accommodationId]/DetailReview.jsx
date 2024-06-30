@@ -49,8 +49,8 @@ const initialReviews = [
 
 const defaultProfileImage = 'https://via.placeholder.com/50'
 
-const DetailReview = () => {
-  const [reviews, setReviews] = useState(initialReviews)
+const DetailReview = ({ review }) => {
+  const [reviews, setReviews] = useState(review)
   const [newComment, setNewComment] = useState('')
   const [newRating, setNewRating] = useState(5)
 
@@ -58,24 +58,58 @@ const DetailReview = () => {
 
   const handleRatingChange = (rating) => setNewRating(rating)
 
-  const handleCommentSubmit = () => {
-    const newReview = {
-      id: reviews.length + 1,
-      name: '익명',
-      location: '알 수 없음',
-      date: '방금',
-      rating: newRating,
-      comment: newComment,
-      profileImage: defaultProfileImage,
+  const handleCommentSubmit = async () => {
+    // const newReview = {
+    //   id: reviews.length + 1,
+    //   name: '익명',
+    //   location: '알 수 없음',
+    //   date: '방금',
+    //   rating: newRating,
+    //   comment: newComment,
+    //   profileImage: defaultProfileImage,
+    // }
+
+    const reviewPayload = {
+      accommodation: {
+        accommodationId: 1,
+      },
+      member: {
+        userId: 1, // 실제 사용자 ID로 변경 필요
+      },
+      reviewDesc: newComment,
+      reviewRating: newRating,
+      date: new Date().toISOString(),
     }
-    setReviews([newReview, ...reviews])
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/accommodations-review`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify([reviewPayload]), // 배열 형태로 전송
+        },
+      )
+
+      if (response.ok) {
+        const createdReview = await response.json()
+        console.log('Review successfully saved:', createdReview)
+      } else {
+        console.error('Failed to save review')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+    }
+    setReviews([reviewPayload, ...reviews])
     setNewComment('')
     setNewRating(5)
   }
 
   const calculateAverageRating = () => {
     if (reviews.length === 0) return 0
-    const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0)
+    const totalRating = reviews.reduce((sum, review) => sum + review.reviewRating, 0)
     return (totalRating / reviews.length).toFixed(1)
   }
 
@@ -131,14 +165,20 @@ const DetailReview = () => {
               <div>
                 <div className='font-semibold'>{review.name}</div>
                 <div className='text-gray-600'>{review.location}</div>
-                <div className='text-gray-600'>{review.date}</div>
+                <div className='text-gray-600'>
+                  {new Intl.DateTimeFormat('ko-KR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  }).format(new Date(review.date))}
+                </div>
                 <div className='text-yellow-500'>
-                  {'★'.repeat(review.rating)}
-                  {'☆'.repeat(5 - review.rating)}
+                  {'★'.repeat(review.reviewRating)}
+                  {'☆'.repeat(5 - review.reviewRating)}
                 </div>
               </div>
             </div>
-            <p className='mt-4'>{review.comment}</p>
+            <p className='mt-4'>{review.reviewDesc}</p>
           </div>
         ))}
       </div>

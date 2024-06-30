@@ -72,8 +72,8 @@ const AccommodationDetailPage = () => {
     images,
     amenities,
     desc,
+    reviews,
   } = accommodationData
-
   return (
     <div className='main-padding-detail'>
       <div className='max-w-full xl:w-[1120px] mx-auto'>
@@ -120,7 +120,7 @@ const AccommodationDetailPage = () => {
           <DetailHostProfile hosts={hosts} />
         </div>
         <hr />
-        <DetailReview />
+        <DetailReview review={reviews} />
         <hr />
         <DetailAccommodationInfo desc={desc} accommodationId={accommodationId} />
       </div>

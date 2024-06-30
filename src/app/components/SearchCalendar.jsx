@@ -7,7 +7,7 @@ const labelContext = ['정확한 날짜', '1일', '2일', '3일', '7일', '14일
 // 모달 창 아래 ['정확한 날짜', '1일', '2일', '3일', '7일', '14일'] 내용이 들어가는 부분.
 function Label({ children }) {
   return (
-    <button className='rounded-full border border-solid border-gray-300 bg-white px-4 py-1 mr-4 text-sm text-gray-500 hover:border-black hover:text-black'>
+    <button className='rounded-full border border-solid border-gray-300 bg-white px-4 py-1.5 mr-4 text-xs text-gray-500 hover:border-black hover:text-black'>
       {children}
     </button>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 
 const locations = [
@@ -18,7 +18,7 @@ const locations = [
 
 const imageItems = [
   {
-    src: 'https://a0.muscache.com/im/pictures/7b5cf816-6c16-49f8-99e5-cbc4adfd97e2.jpg',
+    src: 'https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg',
     label: '유연한 검색',
   },
   {
@@ -35,11 +35,8 @@ const imageItems = [
   },
 ]
 
-const TravelDestination = ({ setTravel, setActiveSection }) => {
-  const [selectedLocation, setSelectedLocation] = useState(null)
-
+const DestinationModal = ({ setSelectedLocation, selectedLocation, setActiveSection }) => {
   const handleClick = (location) => {
-    setTravel(location)
     setSelectedLocation(location)
     setActiveSection('checkin')
   }
@@ -81,4 +78,4 @@ const TravelDestination = ({ setTravel, setActiveSection }) => {
   )
 }
 
-export default TravelDestination
+export default DestinationModal

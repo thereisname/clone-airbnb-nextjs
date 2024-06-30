@@ -7,8 +7,8 @@ import Image from 'next/image'
 const Search = () => {
   const [checkInDate, setCheckInDate] = useState(null)
   const [checkOutDate, setCheckOutDate] = useState(null)
-  const [activeSection, setActiveSection] = useState('')
-  const [travel, setTravel] = useState(null)
+  const [activeSection, setActiveSection] = useState(null)
+  const [selectedLocation, setSelectedLocation] = useState(null) // 상태 유지
   const [guests, setGuests] = useState({
     adults: 0,
     kids: 0,
@@ -58,7 +58,7 @@ const Search = () => {
 
   const getSectionClass = (section) => {
     if (activeSection === section) {
-      return 'bg-white shadow-lg'
+      return 'bg-white search-shadow'
     } else if (activeSection) {
       return 'hover:bg-searchOnClickHoverBackground'
     } else {
@@ -90,7 +90,7 @@ const Search = () => {
 
       <div
         ref={searchRef}
-        className={`h-16 flex items-center absolute left-1/2 transform -translate-x-1/2 top-12 w-full max-w-4xl rounded-full z-40 ${
+        className={`h-16 flex items-center absolute left-1/2 transform -translate-x-1/2 top-12 w-full max-w-[53rem] rounded-full z-40 ${
           activeSection ? 'bg-searchBackground' : 'bg-white search-shadow'
         }`}
         role='group'
@@ -103,8 +103,9 @@ const Search = () => {
           <label className='flex flex-col' role='group'>
             <span className='text-neutral-800 text-xs'>여행지</span>
             <input
-              className='text-neutral-500 text-sm bg-transparent'
-              placeholder={`${travel ?? '여행지 검색'}`}
+              className={` text-sm bg-transparent ${selectedLocation ? 'placeholder-black' : 'placeholder-gray-500'}`}
+              placeholder={`${selectedLocation ?? '여행지 검색'}`}
+              readOnly
             />
           </label>
         </div>
@@ -119,7 +120,7 @@ const Search = () => {
           >
             <label className='flex flex-col'>
               <span className='text-neutral-800 text-xs'>체크인</span>
-              <div className='text-neutral-500 text-sm'>
+              <div className={`text-sm ${checkInDate ? 'text-black' : 'text-neutral-500'}`}>
                 {checkInDate ? format(checkInDate, 'M월 d일') : '날짜 추가'}
               </div>
             </label>
@@ -133,7 +134,7 @@ const Search = () => {
           >
             <label className='flex flex-col'>
               <span className='text-neutral-800 text-xs'>체크아웃</span>
-              <div className='text-neutral-500 text-sm'>
+              <div className={`text-sm ${checkOutDate ? 'text-black' : 'text-neutral-500'}`}>
                 {checkOutDate ? format(checkOutDate, 'M월 d일') : '날짜 추가'}
               </div>
             </label>
@@ -149,7 +150,9 @@ const Search = () => {
         >
           <label className='flex flex-col'>
             <span className='text-neutral-800 text-xs'>여행자</span>
-            <div className='text-neutral-500 text-sm'>{renderGuestText()}</div>
+            <div className={`text-sm ${guests ? 'text-black' : 'text-neutral-500'}`}>
+              {renderGuestText()}
+            </div>
           </label>
         </div>
 
@@ -157,7 +160,8 @@ const Search = () => {
           <SearchModal
             closeModal={() => setActiveSection(null)}
             activeSection={activeSection}
-            setTravel={setTravel}
+            setSelectedLocation={setSelectedLocation} // 상태 전달
+            selectedLocation={selectedLocation} // 상태 전달
             setActiveSection={setActiveSection}
             checkInDate={checkInDate}
             checkOutDate={checkOutDate}

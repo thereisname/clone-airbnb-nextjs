@@ -6,7 +6,8 @@ import GuestSearch from '@/app/components/GuestSearch'
 const SearchModal = ({
   closeModal,
   activeSection,
-  setTravel,
+  setSelectedLocation,
+  selectedLocation,
   setActiveSection,
   checkInDate,
   checkOutDate,
@@ -41,7 +42,13 @@ const SearchModal = ({
   const renderContent = () => {
     switch (activeSection) {
       case 'destination':
-        return <DestinationModal setTravel={setTravel} setActiveSection={setActiveSection} />
+        return (
+          <DestinationModal
+            setSelectedLocation={setSelectedLocation}
+            selectedLocation={selectedLocation}
+            setActiveSection={setActiveSection}
+          />
+        )
       case 'checkin':
       case 'checkout':
         return (
@@ -61,7 +68,9 @@ const SearchModal = ({
   return (
     <div
       ref={modalRef}
-      className={`bg-white rounded-[32px] search-shadow absolute z-50 top-20 ${activeSection === 'guests' ? 'right-0' : 'left-0'}`}
+      className={`bg-white rounded-[32px] search-shadow absolute z-50 top-20 ${
+        activeSection === 'guests' ? 'right-0' : 'left-0'
+      }`}
     >
       {renderContent()}
     </div>

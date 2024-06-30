@@ -12,9 +12,7 @@ import DetailCalendar from './DetailCalendar'
 import DetailAccommodationInfo from './DetailAccommodation'
 import ReservationComponent from './ReservationComponent'
 import { fetchAccommodations } from '@/lib/fetchAccommodations'
-import { fetchAccommodationImages } from '@/lib/fetchAccommodationImages'
-
-let images = []
+import DetailHostProfile from './DetailHostProfile'
 
 const AccommodationDetailPage = () => {
   const { accommodationId } = useParams()
@@ -28,7 +26,6 @@ const AccommodationDetailPage = () => {
     const fetchData = async () => {
       try {
         const data = await fetchAccommodations(accommodationId)
-        images = await fetchAccommodationImages(accommodationId)
         setAccommodationData(data)
       } catch (err) {
         setError(err.message)
@@ -70,8 +67,9 @@ const AccommodationDetailPage = () => {
     reviewCount,
     accommodationPrice,
     locationAlias,
-    hostName,
-    hostSince,
+    hosts,
+    // hostSince,
+    images,
     amenities,
     desc,
   } = accommodationData
@@ -88,7 +86,7 @@ const AccommodationDetailPage = () => {
             </div>
             <hr></hr>
             <div className='my-8'>
-              <DetailHostInfo hostName={hostName} hostSince={hostSince} />
+              <DetailHostInfo hostName={hosts.hostName} hostSince={hosts.hostSince} />
             </div>
             <hr></hr>
             <div className='my-8'>{/* <DetailFeatures amenities={amenities} /> */}</div>
@@ -117,6 +115,9 @@ const AccommodationDetailPage = () => {
             currentMonth={currentMonth}
             setCurrentMonth={setCurrentMonth}
           />
+        </div>
+        <div>
+          <DetailHostProfile hosts={hosts} />
         </div>
         <hr />
         <DetailReview />

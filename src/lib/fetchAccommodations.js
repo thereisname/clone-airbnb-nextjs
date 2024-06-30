@@ -1,5 +1,7 @@
 export const fetchAccommodations = async (accommodationId) => {
-  const response = await fetch(`http://localhost:8080/api/accommodations/${accommodationId}`)
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/accommodations/${accommodationId}`,
+  )
 
   if (!response.ok) {
     throw new Error('Failed to fetch accommodations')
@@ -9,7 +11,7 @@ export const fetchAccommodations = async (accommodationId) => {
 }
 
 export const fetchAccommodation = async () => {
-  const response = await fetch(`http://localhost:8080/api/accommodations`)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/accommodations`)
 
   if (!response.ok) {
     throw new Error('Failed to fetch accommodations')

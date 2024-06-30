@@ -24,7 +24,7 @@ const DynamicHeader = () => {
   }, [])
 
   return (
-    <header className={`${scroll > 2 ? 'h-[78px] pb-[78px]' : 'h-52 lg:h-40 pb-52 lg:pb-40'}`}>
+    <header className={`${scroll > 2 ? 'h-[78px] pb-[78px]' : 'h-56 lg:h-44 pb-56 lg:pb-44'}`}>
       <div
         className={`fixed top-0 left-0 bg-white w-full z-20 ${isAccommodationDetailPage ? 'main-padding-detail' : 'main-padding-list'}`}
       >

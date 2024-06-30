@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 const CompactSearchBar = () => {
   return (
     <div
@@ -31,7 +33,7 @@ const CompactSearchBar = () => {
         </label>
       </div>
       <button className='absolute right-0'>
-        <img src='/assets/Group.svg' alt='검색 버튼' />
+        <Image width={33} height={33} src='/assets/Group.svg' alt='검색 버튼' />
       </button>
     </div>
   )

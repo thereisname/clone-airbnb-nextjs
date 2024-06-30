@@ -20,14 +20,30 @@ const Search = () => {
   const onDateClick = (day) => {
     if (activeSection === 'checkin') {
       setCheckInDate(day)
-      setActiveSection('checkout')
-    } else if (activeSection === 'checkout') {
-      if (isBefore(day, checkInDate)) {
-        setCheckInDate(day)
+      if (checkOutDate && isBefore(checkOutDate, day)) {
         setCheckOutDate(null)
-        setActiveSection('checkout')
+      }
+      setActiveSection('checkout')
+      return
+    }
+
+    if (activeSection === 'checkout') {
+      if (!checkInDate) {
+        if (checkOutDate && isBefore(day, checkOutDate)) {
+          setCheckInDate(day)
+          setCheckOutDate(null)
+        } else {
+          setCheckOutDate(day)
+          setActiveSection('checkin')
+        }
       } else {
-        setCheckOutDate(day)
+        if (isBefore(day, checkInDate)) {
+          setCheckInDate(day)
+          setCheckOutDate(null)
+          setActiveSection('checkout')
+        } else {
+          setCheckOutDate(day)
+        }
       }
     }
   }

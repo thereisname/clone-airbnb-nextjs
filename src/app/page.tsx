@@ -1,13 +1,18 @@
+'use client'
 import Categories from './components/Categories/Categories'
+import FooterComponent from './components/FooterComponent'
 import CardGrid from './components/slider/CardGrid'
+import DynamicHeader from './components/DynamicHeader'
 
 export default function Home() {
-  // (1) FIXME : Root Page.tsx에 Category와 Grid 들어가야 함
-  // TODO : Grid 컴포넌트명 변경
   return (
     <div>
+      <DynamicHeader />
       <Categories />
       <CardGrid />
+      <footer className='bg-gray-100 main-padding-list'>
+        <FooterComponent />
+      </footer>
     </div>
   )
 }

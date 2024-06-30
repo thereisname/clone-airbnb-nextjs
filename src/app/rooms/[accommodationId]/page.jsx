@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import DetailTitle from './DetailTitle'
 import DetailGallery from './DetailGallery'
-import DetailFeatures from './DetailFeature'
 import DetailHostInfo from './DetailHostInfo'
 import DetailSubTitle from './DetailSubTitle'
 import DetailReview from './DetailReview'
@@ -13,6 +12,7 @@ import DetailAccommodationInfo from './DetailAccommodation'
 import ReservationComponent from './ReservationComponent'
 import { fetchAccommodations } from '@/lib/fetchAccommodations'
 import DetailHostProfile from './DetailHostProfile'
+import FooterComponent from '@/app/components/FooterComponent'
 
 const AccommodationDetailPage = () => {
   const { accommodationId } = useParams()
@@ -75,56 +75,64 @@ const AccommodationDetailPage = () => {
     reviews,
   } = accommodationData
   return (
-    <div className='main-padding-detail'>
-      <div className='max-w-full xl:w-[1120px] mx-auto'>
-        <DetailTitle accommodationName={accommodationName} />
-        <DetailGallery images={images} />
-        <div className='flex flex-wrap'>
-          <div className='flex-1'>
-            <div className='mb-8'>
-              <DetailSubTitle locationName={locationName} reviewCount={reviewCount} />
+    <>
+      <div className='main-padding-detail'>
+        <div className='max-w-full xl:w-[1120px] mx-auto'>
+          <DetailTitle accommodationName={accommodationName} />
+          <DetailGallery images={images} />
+          <div className='flex flex-wrap'>
+            <div className='flex-1'>
+              <div className='mb-8'>
+                <DetailSubTitle locationName={locationName} reviewCount={reviewCount} />
+              </div>
+              <hr></hr>
+              <div className='my-8'>
+                <DetailHostInfo hostName={hosts.hostName} hostSince={hosts.hostSince} />
+              </div>
+              <hr></hr>
+              <div className='my-8'>{/* <DetailFeatures amenities={amenities} /> */}</div>
             </div>
-            <hr></hr>
-            <div className='my-8'>
-              <DetailHostInfo hostName={hosts.hostName} hostSince={hosts.hostSince} />
+            <div className='flex justify-center md:justify-end w-full md:w-auto'>
+              <ReservationComponent
+                pricePerDay={accommodationPrice}
+                checkInDate={checkInDate}
+                checkOutDate={checkOutDate}
+                onDateClick={onDateClick}
+                clearDates={clearDates}
+                currentMonth={currentMonth}
+                setCurrentMonth={setCurrentMonth}
+                locationAlias={locationAlias}
+              />
             </div>
-            <hr></hr>
-            <div className='my-8'>{/* <DetailFeatures amenities={amenities} /> */}</div>
           </div>
-          <div className='flex justify-center md:justify-end w-full md:w-auto'>
-            <ReservationComponent
-              pricePerDay={accommodationPrice}
+          <div className=''>
+            <DetailCalendar
+              py='py-12'
+              locationAlias={locationAlias}
               checkInDate={checkInDate}
               checkOutDate={checkOutDate}
               onDateClick={onDateClick}
               clearDates={clearDates}
               currentMonth={currentMonth}
               setCurrentMonth={setCurrentMonth}
-              locationAlias={locationAlias}
             />
           </div>
+          <div>
+            <DetailHostProfile hosts={hosts} />
+          </div>
+          <hr />
+          <DetailReview review={reviews} />
+          <hr />
+          <DetailAccommodationInfo desc={desc} accommodationId={accommodationId} />
         </div>
-        <div className=''>
-          <DetailCalendar
-            py='py-12'
-            locationAlias={locationAlias}
-            checkInDate={checkInDate}
-            checkOutDate={checkOutDate}
-            onDateClick={onDateClick}
-            clearDates={clearDates}
-            currentMonth={currentMonth}
-            setCurrentMonth={setCurrentMonth}
-          />
-        </div>
-        <div>
-          <DetailHostProfile hosts={hosts} />
-        </div>
-        <hr />
-        <DetailReview review={reviews} />
-        <hr />
-        <DetailAccommodationInfo desc={desc} accommodationId={accommodationId} />
       </div>
-    </div>
+
+      <footer className='bg-gray-100 main-padding-detail flex justify-center'>
+        <div className='container py-10 w-full xl:w-[1120px]'>
+          <FooterComponent />
+        </div>
+      </footer>
+    </>
   )
 }
 

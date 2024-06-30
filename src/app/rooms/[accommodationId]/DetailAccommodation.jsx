@@ -34,7 +34,7 @@ const DetailAccommodationInfo = ({ desc, accommodationId }) => {
       <hr className='my-8' />
       <div>
         <h2 className='text-2xl font-semibold mb-4'>숙소 편의시설</h2>
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid md:grid-cols-2 gap-4'>
           {amenities.map((amenity, index) => (
             <div key={index} className='flex items-center'>
               <Image

@@ -27,7 +27,12 @@ export default function CardImageSlider({ images, fit = 'cover' }) {
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <Image src={src} width={700} height={475} alt={`${index + 1}번 이미지 입니다`} />
+            <Image
+              src={src.accommodationImage}
+              width={700}
+              height={475}
+              alt={`${index + 1}번 이미지 입니다`}
+            />
           </SwiperSlide>
         ))}
 
